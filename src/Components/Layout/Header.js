@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import "./Header.css";
-import img from "./../../assets/meals.jpg"
-import HeaderCartButton from './HeaderCartButton';
+import img from "./../../assets/meals.jpg";
+import HeaderCartButton from "./HeaderCartButton";
 
-export default function Header() {
+export default function Header({ showCartHandler }) {
   return (
     <>
       <header className="header">
         <h1>React meals</h1>
-        <HeaderCartButton/>
+        <HeaderCartButton showCartHandler={showCartHandler} />
       </header>
       <div className="main-image">
         <img src={img} />

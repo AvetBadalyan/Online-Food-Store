@@ -8,7 +8,7 @@
 
 .total {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 24px;
@@ -17,6 +17,9 @@
 
 .actions {
   text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .actions button {
