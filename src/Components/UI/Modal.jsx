@@ -16,7 +16,7 @@ const ModalOverlay = ({ children }) => {
 
 const portalElement = document.getElementById("overlays");
 
-export default function Modal({ hideCartHandler }) {
+export default function Modal({ hideCartHandler, children }) {
   return (
     <>
       {ReactDOM.createPortal(
