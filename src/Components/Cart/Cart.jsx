@@ -6,7 +6,7 @@ export default function Cart({ hideCartHandler }) {
   const cartItems = (
     <ul className="cart-items">
       {[{ id: "c1", name: "sushi", amount: 2, price: 12.99 }].map((item) => (
-        <li>{item.name} </li>
+        <li key={Math.random()}>{item.name} </li>
       ))}
     </ul>
   );

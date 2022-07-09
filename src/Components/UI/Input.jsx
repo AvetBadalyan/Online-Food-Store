@@ -1,10 +1,12 @@
-import React from 'react';
-import "./Input.css"
+import React from "react";
+import "./Input.css";
 
-export default function Input(props) {
+export default React.forwardRef(function Input(props, ref) {
   return (
-      <div className='input'>
-          <label>{props.label} <input {...props.input} /> </label>
+    <div className="input">
+      <label>
+        {props.label} <input ref={ref} {...props.input} />
+      </label>
     </div>
-  )
-}
+  );
+});
