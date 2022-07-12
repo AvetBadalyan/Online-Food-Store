@@ -6,26 +6,33 @@ import MealItem from "./MealItem/MealItem";
 const DUMMY_MEALS = [
   {
     id: "m1",
-    name: "Sushi",
-    description: "Finest fish and veggies",
+    name: "Armenian Khorovats",
+    description: "Pork Loin",
     price: 22.99,
   },
   {
     id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
+    name: "Beef Qebab",
+    description: "Delicious food",
     price: 16.5,
   },
   {
     id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
+    name: "Spas - Armenian Yogurt soup",
+    description: "yogurt, greens, wheat",
     price: 12.99,
   },
   {
     id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
+    name: "Qyufta",
+    description: "Armenian national food",
+    price: 18.99,
+  },
+
+  {
+    id: "m5",
+    name: "Potato and fat BBQ",
+    description: "250g, served with 1/2 lavash",
     price: 18.99,
   },
 ];
