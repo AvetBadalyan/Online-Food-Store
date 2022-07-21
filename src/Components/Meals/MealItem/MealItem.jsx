@@ -19,10 +19,15 @@ export default function MealItem(props) {
 
   return (
     <li className="meal">
-      <div>
-        <h3>{props.name}</h3>
-        <div className="description">{props.description}</div>
-        <div className="price">{price}</div>
+      <div className="meal-item-text-with-image">
+        <div className="meal-item-text">
+          <h3>{props.name}</h3>
+          <div className="description">{props.description}</div>
+          <div className="price">{price}</div>
+        </div>
+        <div>
+          <img src={props.photo} alt="photo" className="meal-item-image" />
+        </div>
       </div>
       <div>
         <MealItemForm id={props.id} onAddToCart={addToCartHandler} />
