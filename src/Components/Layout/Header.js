@@ -7,7 +7,9 @@ export default function Header({ showCartHandler }) {
   return (
     <>
       <header className="header">
-        <h1>React meals</h1>
+        <h1>
+          <i>AVET'S FOOD STORE</i>
+        </h1>
         <HeaderCartButton showCartHandler={showCartHandler} />
       </header>
       <div className="main-image">

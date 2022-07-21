@@ -1,3 +1,12 @@
+![screenshot]("./../Screenshots/foodstore.jpg")
+![screenshot]("./../Screenshots/foodstore2.jpg")
+![screenshot]("./../Screenshots/foodstore3.jpg")
+![screenshot]("./../Screenshots/foodstore4.jpg")
+
+# THIS IS AN ONLINE FOOD STORE WITH A NICE STYLING AND PRINCIPAL FUNCTIONS - VIEW MEALS MENU WITH MEAL NAME, PRICE AND DESCRIPTION, </br>
+
+CLICK ON ADD BUTTON TO ADD THE MEAL TO THE CART, CONTROL THE AMOUNT OF CHOSEN ITEM, ADD OR REMOVE ITEMS TO/FROM THE CART.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
