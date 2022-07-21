@@ -1,7 +1,7 @@
 ![screenshot](./src/assets/Screenshots/foodstore.jpg)
 ![screenshot](./src/assets/Screenshots/foodstore2.jpg)
 ![screenshot](./src/assets/Screenshots/foodstore3.jpg)
-![screenshot]("./src/assets/Screenshots/foodstore4.jpg")
+![screenshot](./src/assets/Screenshots/foodstore4.jpg)
 
 # THIS IS AN ONLINE FOOD STORE WITH A NICE STYLING AND PRINCIPAL FUNCTIONS - VIEW MEALS MENU WITH MEAL NAME, PRICE AND DESCRIPTION, </br>
 
