@@ -14,8 +14,12 @@ export default function CartItem(props) {
         </div>
       </div>
       <div className="cart-actions">
-        <button onClick={props.onRemove}>-</button>
-        <button onClick={props.onAdd}>+</button>
+        <button onClick={props.onRemove} className="cart-item-button">
+          -
+        </button>
+        <button onClick={props.onAdd} className="cart-item-button">
+          +
+        </button>
       </div>
     </li>
   );
