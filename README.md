@@ -3,8 +3,7 @@
 ![screenshot](./src/assets/Screenshots/foodstore3.jpg)
 ![screenshot](./src/assets/Screenshots/foodstore4.jpg)
 
-## THIS IS AN ONLINE FOOD STORE WITH A NICE STYLING AND PRINCIPAL FUNCTIONS - VIEW MEALS MENU WITH MEAL NAME, PRICE AND DESCRIPTION,
-## CLICK ON ADD BUTTON TO ADD THE MEAL TO THE CART, CONTROL THE AMOUNT OF CHOSEN ITEM, ADD OR REMOVE ITEMS TO/FROM THE CART.
+## This is an online food store with a nice styling and principal functions - view meals menu with meal name, price and description, click on add button to add the meal to the cart, control the amount of chosen item, add or remove items to/from the cart.
 
 # Getting Started with Create React App
 
