@@ -28,3 +28,10 @@
   color: white;
   font-size: 20px;
 }
+
+.MealsError{
+  text-align: center;
+  color: red;
+  font-size: 20px;
+  background-color: white;
+}
