@@ -1,7 +1,7 @@
 .order-form {
   margin: 1rem 0;
-  height: 15rem;
-  overflow: scroll;
+  height: 35vh;
+  overflow-y: scroll;
 }
 
 .control {

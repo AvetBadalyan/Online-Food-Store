@@ -10,7 +10,7 @@ export default function Cart({ hideCartHandler }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const cartCtx = useContext(CartContext);
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `: ${cartCtx.totalAmount.toFixed(2)}$`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -73,7 +73,7 @@ export default function Cart({ hideCartHandler }) {
     <>
       {cartItems}
       <div className="total">
-        <div>Total Amount: </div>
+        <div>Total Amount </div>
         <div>{totalAmount}</div>
       </div>
       {isCheckout && (
