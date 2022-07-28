@@ -1,8 +1,8 @@
-.form {
+.meal-item-form {
   text-align: right;
 }
 
-.form button {
+.meal-item-form button {
   font: inherit;
   cursor: pointer;
   background-color: rgb(138, 43, 6);
@@ -13,8 +13,8 @@
   font-weight: bold;
 }
 
-.form button:hover,
-.form button:active {
+.meal-item-form button:hover,
+.meal-item-form button:active {
   background-color: rgb(100, 30, 3);
   border-color: rgb(100, 30, 3);
 }

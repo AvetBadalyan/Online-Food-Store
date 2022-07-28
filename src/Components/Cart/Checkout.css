@@ -1,0 +1,63 @@
+.order-form {
+  margin: 1rem 0;
+  overflow: auto;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+  width: 50%;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.actions button {
+  font: inherit;
+  color: rgb(90, 26, 1);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 2rem; 
+}
+
+.actions button:hover,
+.actions button:active {
+  opacity: 0.95;
+}
+
+.actions .submit {
+  border: 1px solid rgb(90, 26, 1);
+  background-color: rgb(90, 26, 1);
+  color: white;
+}
+
+.actions .submit:hover,
+.actions .submit:active {
+  background-color: rgb(122, 39, 6);
+}
+
+.invalid label {
+  color: rgb(202, 62, 81);
+}
+
+.invalid input {
+  border-color: rgb(170, 11, 32);
+  background-color: rgb(255, 239, 241);
+}
