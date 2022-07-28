@@ -57,7 +57,11 @@ export default function Checkout(props) {
     <form onSubmit={confirmHandler} className="order-form">
       <div className={formInputsValidity.name ? "control" : "control invalid"}>
         <label>
-          Your Name <input type="text" ref={nameInputRef} />
+          Your Name
+          <input
+            type="text"
+            ref={nameInputRef}
+          />
         </label>
         {!formInputsValidity.name && <p>Please enter a valid name!</p>}
       </div>
@@ -66,7 +70,11 @@ export default function Checkout(props) {
         className={formInputsValidity.street ? "control" : "control invalid"}
       >
         <label>
-          Street <input type="text" ref={streetInputRef} />
+          Street
+          <input
+            type="text"
+            ref={streetInputRef}
+          />
         </label>
         {!formInputsValidity.street && <p>Please enter a valid Street!</p>}
       </div>
@@ -77,16 +85,25 @@ export default function Checkout(props) {
         }
       >
         <label>
-          Postal Code <input type="text" ref={postalCodeInputRef} />
+          Postal Code
+          <input
+            type="text"
+            ref={postalCodeInputRef}
+            placeholder="Must be 5 characters"
+          />
         </label>
         {!formInputsValidity.postalCode && (
-          <p>Please enter a valid postal code (5 characters)!</p>
+          <p>Please enter a valid postal code!</p>
         )}
       </div>
 
       <div className={formInputsValidity.city ? "control" : "control invalid"}>
         <label>
-          City <input type="text" ref={cityInputRef} />
+          City
+          <input
+            type="text"
+            ref={cityInputRef}
+          />
         </label>
         {!formInputsValidity.city && <p>Please enter a valid city!</p>}
       </div>

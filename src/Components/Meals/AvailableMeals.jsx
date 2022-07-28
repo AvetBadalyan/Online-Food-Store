@@ -56,16 +56,51 @@ export default function AvailableMeals() {
     );
   }
 
-  const mealsList = meals.map((meal) => (
-    <MealItem
-      id={meal.id}
-      key={meal.id}
-      name={meal.name}
-      description={meal.description}
-      price={meal.price}
-      photo={meal.photo}
-    />
-  ));
+  const DUMMY_MEALS = [
+    {
+      id: "d1",
+      name: "Sushi",
+      description: "Finest fish and veggies",
+      price: 22.99,
+      photo: "https://buy.am/media/image/f1/e0/48/Yasai-Maki-Sushi-Mushi.jpg",
+    },
+    {
+      id: "d2",
+      name: "Schnitzel",
+      description: "A german specialty!",
+      price: 16.5,
+      photo:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG/1200px-Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG",
+    },
+    {
+      id: "d3",
+      name: "Barbecue Burger",
+      description: "American, raw, meaty",
+      price: 12.99,
+      photo:
+        "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/exps28800_UG143377D12_18_1b_RMS.jpg",
+    },
+    {
+      id: "d4",
+      name: "Green Bowl",
+      description: "Healthy...and green...",
+      price: 18.99,
+      photo: "https://i.ytimg.com/vi/xIULT55Xjmw/maxresdefault.jpg",
+    },
+  ];
+
+  const mealsList = meals
+    .concat(DUMMY_MEALS)
+    .map((meal) => (
+      <MealItem
+        id={meal.id}
+        key={meal.id}
+        name={meal.name}
+        description={meal.description}
+        price={meal.price}
+        photo={meal.photo}
+      />
+    ));
   return (
     <section className="meals">
       <Card>
