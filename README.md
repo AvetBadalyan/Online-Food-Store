@@ -1,12 +1,12 @@
-![screenshot](./src/assets/Screenshots/foodstore1.jpg)
-![screenshot](./src/assets/Screenshots/foodstore2.jpg)
+![screenshot](./src/assets/Screenshots/foodStore1.jpg)
+![screenshot](./src/assets/Screenshots/foodStore2.jpg)
 ![screenshot](./src/assets/Screenshots/foodstore3.jpg)
-![screenshot](./src/assets/Screenshots/foodstore4.jpg)
-![screenshot](./src/assets/Screenshots/foodstore5.jpg)
-![screenshot](./src/assets/Screenshots/foodstore6.jpg)
-![screenshot](./src/assets/Screenshots/foodstore7.jpg)
-![screenshot](./src/assets/Screenshots/foodstore8.jpg)
-![screenshot](./src/assets/Screenshots/foodstore9.jpg)
+![screenshot](./src/assets/Screenshots/foodStore4.jpg)
+![screenshot](./src/assets/Screenshots/foodStore5.jpg)
+![screenshot](./src/assets/Screenshots/foodStore6.jpg)
+![screenshot](./src/assets/Screenshots/foodStore7.jpg)
+![screenshot](./src/assets/Screenshots/foodStore8.jpg)
+![screenshot](./src/assets/Screenshots/foodStore9.jpg)
 
 ## This is an online food store with a nice styling and principal functions - view meals menu with meal name, price and description, click on add button to add the meal to the cart, control the amount of chosen item, add or remove items to/from the cart.
 
