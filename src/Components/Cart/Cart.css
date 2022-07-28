@@ -4,7 +4,6 @@
   padding: 0;
   max-height: 320px;
   overflow: scroll;
-
 }
 
 .total {
@@ -47,4 +46,22 @@
 .actions .button {
   background-color: rgb(138, 43, 6);
   color: white;
+}
+
+.success-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.success-order p {
+  font-size: large;
+  font-weight: bold;
+  border: 2px solid rgb(138, 43, 6);
+  margin: auto;
+  padding: 8px 32px;
+  border-radius: 25px;
 }

@@ -38,6 +38,7 @@ export default function Cart({ hideCartHandler }) {
     );
     setIsSubmitting(false);
     setIsSubmitted(true);
+    cartCtx.clearCart();
   };
 
   const cartItems = (
@@ -83,7 +84,14 @@ export default function Cart({ hideCartHandler }) {
   );
 
   const isSubmittingModalContent = <p>Sending order data...</p>;
-  const isSubmittedModalContent = <p>Successfully sent the order ✅ </p>;
+  const isSubmittedModalContent = (
+    <div className="success-order">
+      <p>Successfully sent the order ✅ </p>
+      <button className="button" onClick={hideCartHandler}>
+        Close
+      </button>
+    </div>
+  );
 
   return (
     <Modal hideCartHandler={hideCartHandler}>
