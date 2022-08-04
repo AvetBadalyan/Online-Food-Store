@@ -4,6 +4,7 @@ import "./Cart.css";
 import CartContext from "./../../Context/cart-context";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
+import AuthForm from "../Auth/AuthForm";
 
 export default function Cart({ hideCartHandler }) {
   const [isCheckout, setIsChekout] = useState(false);
@@ -76,6 +77,7 @@ export default function Cart({ hideCartHandler }) {
         <div>Total Amount </div>
         <div>{totalAmount}</div>
       </div>
+      <AuthForm />
       {isCheckout && (
         <Checkout onConfirm={submitOrderHandler} onCancel={hideCartHandler} />
       )}
