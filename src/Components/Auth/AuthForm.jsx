@@ -19,7 +19,7 @@ const AuthForm = () => {
     if (isLoginModeActive) {
     } else {
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAbRAP1xePx6leAV2k-N5q7yXrfpPqIkwY",
         {
           method: "POST",
           body: JSON.stringify({
@@ -31,14 +31,23 @@ const AuthForm = () => {
             "Content-Type": "application/json",
           },
         }
-      );
+      ).then((res) => {
+        if (res.ok) {
+          // ...
+        } else {
+          res.json().then((data) => {
+            // error
+            alert(data);
+          });
+        }
+      });
     }
   };
 
   return (
     <section className="auth">
       <h1>{isLoginModeActive ? "Login" : "Sign Up"}</h1>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="login-control">
           <label htmlFor="email">Your Email</label>
           <input type="email" id="email" required ref={emailInputRef} />
