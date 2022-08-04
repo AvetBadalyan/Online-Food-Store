@@ -5,7 +5,9 @@ import "./AuthForm.css";
 const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
   const [isLoginModeActive, setIsLoginModeActive] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const switchAuthModeHandler = () => {
     setIsLoginModeActive((prevState) => !prevState);
@@ -16,6 +18,7 @@ const AuthForm = () => {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
+    setIsLoading(true);
     if (isLoginModeActive) {
     } else {
       fetch(
@@ -32,8 +35,9 @@ const AuthForm = () => {
           },
         }
       ).then((res) => {
+         setIsLoading(false);
         if (res.ok) {
-          // ...
+          alert("Sign up successfully!")
         } else {
           res.json().then((data) => {
             let errorMessage = "Authentification failed!";
@@ -65,7 +69,8 @@ const AuthForm = () => {
           />
         </div>
         <div className="login-actions">
-          <button>{isLoginModeActive ? "Login" : "Create Account"}</button>
+          {!isLoading && <button>{isLoginModeActive ? "Login" : "Create Account"}</button>}
+          {isLoading && <p>Sending request... </p>}
           <button
             type="button"
             className="toggle"
