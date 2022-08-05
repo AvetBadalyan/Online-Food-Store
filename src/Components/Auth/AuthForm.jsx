@@ -19,36 +19,40 @@ const AuthForm = () => {
     const enteredPassword = passwordInputRef.current.value;
 
     setIsLoading(true);
+
+    let url;
+
     if (isLoginModeActive) {
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAbRAP1xePx6leAV2k-N5q7yXrfpPqIkwY";
     } else {
-      fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAbRAP1xePx6leAV2k-N5q7yXrfpPqIkwY",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            email: enteredEmail,
-            password: enteredPassword,
-            returnSecureToken: true,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      ).then((res) => {
-         setIsLoading(false);
-        if (res.ok) {
-          alert("Sign up successfully!")
-        } else {
-          res.json().then((data) => {
-            let errorMessage = "Authentification failed!";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
-            alert(errorMessage);
-          });
-        }
-      });
+      url =
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAbRAP1xePx6leAV2k-N5q7yXrfpPqIkwY";
     }
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken: true,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
+      setIsLoading(false);
+      if (res.ok) {
+        alert("Sign up successfully!");
+      } else {
+        res.json().then((data) => {
+          let errorMessage = "Authentification failed!";
+          if (data && data.error && data.error.message) {
+            errorMessage = data.error.message;
+          }
+          alert(errorMessage);
+        });
+      }
+    });
   };
 
   return (
@@ -69,7 +73,9 @@ const AuthForm = () => {
           />
         </div>
         <div className="login-actions">
-          {!isLoading && <button>{isLoginModeActive ? "Login" : "Create Account"}</button>}
+          {!isLoading && (
+            <button>{isLoginModeActive ? "Login" : "Create Account"}</button>
+          )}
           {isLoading && <p>Sending request... </p>}
           <button
             type="button"
