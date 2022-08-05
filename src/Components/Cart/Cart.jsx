@@ -7,22 +7,20 @@ import Checkout from "./Checkout";
 import AuthForm from "../Auth/AuthForm";
 
 export default function Cart({ hideCartHandler }) {
-  const [isCheckout, setIsChekout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const cartCtx = useContext(CartContext);
   const totalAmount = `: ${cartCtx.totalAmount.toFixed(2)}$`;
   const hasItems = cartCtx.items.length > 0;
+  const [isOrderClicked, setIsOrderClicked] = useState(false);
+
+  const [token, setToken] = useState(null);
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
-  };
-
-  const orderHandler = () => {
-    setIsChekout(true);
   };
 
   const submitOrderHandler = async (userData) => {
@@ -57,13 +55,15 @@ export default function Cart({ hideCartHandler }) {
     </ul>
   );
 
+  const isLoggedIn = !!token;
+
   const modalActions = (
     <div className="actions">
       <button className="button--alt" onClick={hideCartHandler}>
         Close
       </button>
       {hasItems && (
-        <button className="button" onClick={orderHandler}>
+        <button className="button" onClick={() => setIsOrderClicked(true)}>
           Order
         </button>
       )}
@@ -77,11 +77,12 @@ export default function Cart({ hideCartHandler }) {
         <div>Total Amount </div>
         <div>{totalAmount}</div>
       </div>
-      <AuthForm />
-      {isCheckout && (
+      {isOrderClicked && !isLoggedIn && <AuthForm setToken={setToken} />}
+
+      {isLoggedIn && (
         <Checkout onConfirm={submitOrderHandler} onCancel={hideCartHandler} />
       )}
-      {!isCheckout && modalActions}
+      {!isLoggedIn && modalActions}
     </>
   );
 

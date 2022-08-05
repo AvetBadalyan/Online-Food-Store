@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import "./AuthForm.css";
 
-const AuthForm = () => {
+const AuthForm = ({ setToken }) => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
@@ -50,13 +50,13 @@ const AuthForm = () => {
             if (data && data.error && data.error.message) {
               errorMessage = data.error.message;
             }
-
+            alert(errorMessage);
             throw new Error(errorMessage);
           });
         }
       })
       .then((data) => {
-        console.log(data);
+        setToken(data.idToken);
       })
       .catch((err) => {
         alert(err.message);
