@@ -18,6 +18,8 @@ export default function Cart({ hideCartHandler }) {
   const [token, setToken] = useState(null);
   const isLoggedIn = !!token;
 
+
+
   // add or remove items from the cart
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -83,6 +85,12 @@ export default function Cart({ hideCartHandler }) {
         <div>{totalAmount}</div>
       </div>
       {isOrderClicked && !isLoggedIn && <AuthForm setToken={setToken} />}
+
+      {isLoggedIn && (
+        <div className="logout-actions">
+          <button className="logout">Log out</button>
+        </div>
+      )}
 
       {/* user input data including name, street, postal code and the city to make an order */}
       {isLoggedIn && (

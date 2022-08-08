@@ -65,3 +65,25 @@
   padding: 8px 32px;
   border-radius: 25px;
 }
+
+.logout-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-actions button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  border: 1px solid rgb(90, 26, 1);
+  background-color: rgb(90, 26, 1);
+  color: white;
+}
+
+.logout-actions button:hover,
+.logout-actions button:active {
+  opacity: 0.95;
+  background-color: rgb(122, 39, 6);
+}
