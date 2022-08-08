@@ -84,25 +84,27 @@ export default function Cart({ hideCartHandler }) {
   const cartModalContent = (
     <>
       {cartItems}
-      <div className="total">
-        <div>Total Amount </div>
-        <div>{totalAmount}</div>
-      </div>
-      {isOrderClicked && !isLoggedIn && <AuthForm setToken={setToken} />}
-
-      {isLoggedIn && (
-        <div className="logout-actions">
-          <button className="logout" onClick={logOutHandler}>
-            Log out
-          </button>
+      <div className="cart-modal-content">
+        <div className="total">
+          <div>Total Amount </div>
+          <div>{totalAmount}</div>
         </div>
-      )}
+        {isOrderClicked && !isLoggedIn && <AuthForm setToken={setToken} />}
 
-      {/* user input data including name, street, postal code and the city to make an order */}
-      {isLoggedIn && (
-        <Checkout onConfirm={submitOrderHandler} onCancel={hideCartHandler} />
-      )}
-      {!isLoggedIn && modalActions}
+        {isLoggedIn && (
+          <div className="logout-actions">
+            <button className="logout" onClick={logOutHandler}>
+              Log out
+            </button>
+          </div>
+        )}
+
+        {/* user input data including name, street, postal code and the city to make an order */}
+        {isLoggedIn && (
+          <Checkout onConfirm={submitOrderHandler} onCancel={hideCartHandler} />
+        )}
+        {!isLoggedIn && modalActions}
+      </div>
     </>
   );
 
