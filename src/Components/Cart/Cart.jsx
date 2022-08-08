@@ -18,7 +18,11 @@ export default function Cart({ hideCartHandler }) {
   const [token, setToken] = useState(null);
   const isLoggedIn = !!token;
 
+  // on click the log out button
 
+  const logOutHandler = () => {
+    setToken(null);
+  };
 
   // add or remove items from the cart
   const cartItemRemoveHandler = (id) => {
@@ -88,7 +92,9 @@ export default function Cart({ hideCartHandler }) {
 
       {isLoggedIn && (
         <div className="logout-actions">
-          <button className="logout">Log out</button>
+          <button className="logout" onClick={logOutHandler}>
+            Log out
+          </button>
         </div>
       )}
 
