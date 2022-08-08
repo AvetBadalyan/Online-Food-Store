@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import "./AvailableMeals.css";
 import MealItem from "./MealItem/MealItem";
 
+// create dummy meals in case of URl doesn't work so that not break the page
 const DUMMY_MEALS = [
   {
     id: "d1",
@@ -41,6 +42,7 @@ export default function AvailableMeals() {
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
 
+  // fetch the meals from firebase Realtime datebase
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
@@ -73,6 +75,7 @@ export default function AvailableMeals() {
     });
   }, []);
 
+  // add a loader during fetching
   if (isLoading) {
     return (
       <section className="MealsLoading">
@@ -81,6 +84,7 @@ export default function AvailableMeals() {
     );
   }
 
+  // check if the firebase is ok, if not show only dummy meals
   const mealsList = (meals ? meals.concat(DUMMY_MEALS) : DUMMY_MEALS).map(
     (meal) => (
       <MealItem

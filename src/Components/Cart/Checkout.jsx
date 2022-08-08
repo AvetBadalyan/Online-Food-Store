@@ -6,6 +6,7 @@ const isEmpty = (value) => value.trim() === "";
 const isFiveChars = (value) => value.trim().length === 5;
 
 export default function Checkout(props) {
+  // make an object state with user input data about the name and address
   const [formInputsValidity, setFormInputsValidity] = useState({
     name: true,
     street: true,
@@ -13,6 +14,7 @@ export default function Checkout(props) {
     postalCode: true,
   });
 
+  // connect the user input data with useRef
   const nameInputRef = useRef();
   const streetInputRef = useRef();
   const postalCodeInputRef = useRef();
@@ -54,7 +56,7 @@ export default function Checkout(props) {
       name: enteredName,
       street: enteredStreet,
       city: enteredCity,
-      postalCode: enteredPostalCode
+      postalCode: enteredPostalCode,
     });
   };
 
@@ -63,10 +65,7 @@ export default function Checkout(props) {
       <div className={formInputsValidity.name ? "control" : "control invalid"}>
         <label>
           Your Name
-          <input
-            type="text"
-            ref={nameInputRef}
-          />
+          <input type="text" ref={nameInputRef} />
         </label>
         {!formInputsValidity.name && <p>Please enter a valid name!</p>}
       </div>
@@ -76,10 +75,7 @@ export default function Checkout(props) {
       >
         <label>
           Street
-          <input
-            type="text"
-            ref={streetInputRef}
-          />
+          <input type="text" ref={streetInputRef} />
         </label>
         {!formInputsValidity.street && <p>Please enter a valid Street!</p>}
       </div>
@@ -105,10 +101,7 @@ export default function Checkout(props) {
       <div className={formInputsValidity.city ? "control" : "control invalid"}>
         <label>
           City
-          <input
-            type="text"
-            ref={cityInputRef}
-          />
+          <input type="text" ref={cityInputRef} />
         </label>
         {!formInputsValidity.city && <p>Please enter a valid city!</p>}
       </div>

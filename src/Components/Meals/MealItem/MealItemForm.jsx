@@ -6,6 +6,7 @@ export default function MealItemForm(props) {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
 
+  // take the number entered from amount field and pass it to the state if valid
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredAmount = amountInputRef.current.value;

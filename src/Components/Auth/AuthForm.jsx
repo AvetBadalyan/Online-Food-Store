@@ -3,9 +3,11 @@ import { useState } from "react";
 import "./AuthForm.css";
 
 const AuthForm = ({ setToken }) => {
+  // take the login and password from input field with useRef
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
+  // check if we are in login mode or in sign up mode
   const [isLoginModeActive, setIsLoginModeActive] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,6 +22,7 @@ const AuthForm = ({ setToken }) => {
 
     setIsLoading(true);
 
+    // fetch with POST method from firebase depending if we are logging in or signing up
     let url;
 
     if (isLoginModeActive) {
@@ -63,6 +66,7 @@ const AuthForm = ({ setToken }) => {
       });
   };
 
+  // same div, content depending on the state we are logging in or signing up
   return (
     <section className="auth">
       <h1>{isLoginModeActive ? "Login" : "Sign Up"}</h1>

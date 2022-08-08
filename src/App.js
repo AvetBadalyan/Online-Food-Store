@@ -6,6 +6,7 @@ import Meals from "./Components/Meals/Meals";
 import CartProvider from "./Context/CartProvider";
 
 function App() {
+  // make the cart visible or hide it
   const [cartIsShown, SetCartIsShown] = useState(false);
 
   const showCartHandler = () => {

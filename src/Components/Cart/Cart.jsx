@@ -14,8 +14,11 @@ export default function Cart({ hideCartHandler }) {
   const hasItems = cartCtx.items.length > 0;
   const [isOrderClicked, setIsOrderClicked] = useState(false);
 
+  // check if the login process has successfully completed, in case of success the token must be truthy
   const [token, setToken] = useState(null);
+  const isLoggedIn = !!token;
 
+  // add or remove items from the cart
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
@@ -23,6 +26,7 @@ export default function Cart({ hideCartHandler }) {
     cartCtx.addItem({ ...item, amount: 1 });
   };
 
+  // fetch with POST method in firebase the order that user made
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
@@ -40,6 +44,7 @@ export default function Cart({ hideCartHandler }) {
     cartCtx.clearCart();
   };
 
+  // mapping on cart items in a list
   const cartItems = (
     <ul className="cart-items">
       {cartCtx.items.map((item) => (
@@ -55,8 +60,7 @@ export default function Cart({ hideCartHandler }) {
     </ul>
   );
 
-  const isLoggedIn = !!token;
-
+  // create buttons to close the cart or make an order
   const modalActions = (
     <div className="actions">
       <button className="button--alt" onClick={hideCartHandler}>
@@ -70,6 +74,7 @@ export default function Cart({ hideCartHandler }) {
     </div>
   );
 
+  // the main content of the cart
   const cartModalContent = (
     <>
       {cartItems}
@@ -79,6 +84,7 @@ export default function Cart({ hideCartHandler }) {
       </div>
       {isOrderClicked && !isLoggedIn && <AuthForm setToken={setToken} />}
 
+      {/* user input data including name, street, postal code and the city to make an order */}
       {isLoggedIn && (
         <Checkout onConfirm={submitOrderHandler} onCancel={hideCartHandler} />
       )}
@@ -86,7 +92,10 @@ export default function Cart({ hideCartHandler }) {
     </>
   );
 
+  // cart content during submitting the order
   const isSubmittingModalContent = <p>Sending order data...</p>;
+
+  // cart content after submitting the order
   const isSubmittedModalContent = (
     <div className="success-order">
       <p>Successfully sent the order ✅ </p>

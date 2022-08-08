@@ -17,6 +17,7 @@ export default function MealItem(props) {
     });
   };
 
+  // show single meal with name, price, description and image
   return (
     <li className="meal">
       <div className="meal-item-text-with-image">
