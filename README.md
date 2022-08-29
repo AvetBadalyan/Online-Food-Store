@@ -1,5 +1,7 @@
 ## This is an online food store with a nice styling and principal functions - view meals menu with meal name, price and description, click on add button to add the meal to the cart, control the amount of chosen item, add or remove items to/from the cart.
 
+Link to the Website - [https://online-foodstore.web.app/](https://online-foodstore.web.app/).
+
 ![screenshot](./src/assets/Screenshots/foodStore1.jpg)
 ![screenshot](./src/assets/Screenshots/foodStoreScreen2.jpg)
 ![screenshot](./src/assets/Screenshots/empty%20cart.jpg)
