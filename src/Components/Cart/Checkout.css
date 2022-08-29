@@ -9,7 +9,6 @@
   width: 50%;
 }
 
-
 .control label {
   font-weight: bold;
   margin-bottom: 0.25rem;
@@ -36,7 +35,7 @@
   background-color: transparent;
   border: none;
   border-radius: 25px;
-  padding: 0.5rem 2rem; 
+  padding: 0.5rem 2rem;
 }
 
 .actions button:hover,
@@ -63,7 +62,6 @@
   border-color: rgb(170, 11, 32);
   background-color: rgb(255, 239, 241);
 }
-
 
 .control p {
   font-weight: bold;

@@ -13,7 +13,7 @@ export default function Header({ showCartHandler }) {
         <HeaderCartButton showCartHandler={showCartHandler} />
       </header>
       <div className="main-image">
-        <img src={img} />
+        <img src={img} alt="foods" />
       </div>
     </>
   );

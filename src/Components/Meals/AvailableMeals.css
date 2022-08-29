@@ -23,13 +23,13 @@
   }
 }
 
-.MealsLoading{
+.MealsLoading {
   text-align: center;
   color: white;
   font-size: 20px;
 }
 
-.MealsError{
+.MealsError {
   text-align: center;
   color: red;
   font-size: 20px;
