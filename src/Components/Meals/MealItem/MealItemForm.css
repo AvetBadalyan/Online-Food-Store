@@ -5,7 +5,7 @@
 .meal-item-form button {
   font: inherit;
   cursor: pointer;
-  background-color: rgb(138, 43, 6);
+  background-color: rgba(138, 43, 6, 0.95);
   border: 1px solid rgb(138, 43, 6);
   color: white;
   padding: 4px 32px;
@@ -13,7 +13,10 @@
   font-weight: bold;
 }
 
-.meal-item-form button:hover,
+.meal-item-form button:hover {
+  background-color: rgba(138, 43, 6, 1);
+  border-color: rgb(100, 30, 3);
+}
 .meal-item-form button:active {
   background-color: rgb(100, 30, 3);
   border-color: rgb(100, 30, 3);
