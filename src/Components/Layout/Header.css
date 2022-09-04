@@ -11,6 +11,19 @@
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
+  padding: 1vh;
+}
+
+.header h1 {
+  font-size: 4vh;
+  margin: 1vw;
+}
+
+@media (max-width: 412px) and (orientation: portrait) {
+  .header h1 {
+    font-size: 4vw;
+    margin: 1vw;
+  }
 }
 
 .main-image {

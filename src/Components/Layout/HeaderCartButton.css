@@ -4,12 +4,19 @@
   border: none;
   background-color: rgb(77, 22, 1);
   color: white;
-  padding: 12px 48px;
+  padding: 1.4vh 5.6vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-flow: row wrap;
   border-radius: 25px;
   font-weight: bold;
+}
+
+@media (max-width: 412px) and (orientation: portrait) {
+  .button {
+    padding: 10px;
+  }
 }
 
 .button:hover,

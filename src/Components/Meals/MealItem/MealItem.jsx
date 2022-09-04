@@ -26,8 +26,8 @@ export default function MealItem(props) {
           <div className="description">{props.description}</div>
           <div className="price">{price}</div>
         </div>
-        <div>
-          <img src={props.photo} alt="meal-item" className="meal-item-image" />
+        <div className="meal-item-image">
+          <img src={props.photo} alt="meal-item" />
         </div>
       </div>
       <div>

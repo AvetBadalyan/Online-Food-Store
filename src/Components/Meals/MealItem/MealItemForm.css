@@ -1,5 +1,9 @@
 .meal-item-form {
-  text-align: right;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  height: 100%;
 }
 
 .meal-item-form button {
@@ -11,6 +15,12 @@
   padding: 4px 32px;
   border-radius: 20px;
   font-weight: bold;
+}
+
+@media (max-width: 412px) and (orientation: portrait) {
+  .meal-item-form button {
+    padding: 4px 8px;
+  }
 }
 
 .meal-item-form button:hover {

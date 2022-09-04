@@ -1,12 +1,12 @@
 .input {
   display: flex;
   align-items: center;
+  flex-flow: row wrap;
   margin-bottom: 8px;
 }
 
 .input label {
   font-weight: bold;
-  margin-right: 16px;
 }
 
 .input input {

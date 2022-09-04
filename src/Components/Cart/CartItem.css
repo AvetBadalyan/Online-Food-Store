@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row wrap;
   border-bottom: 2px solid #8a2b06;
   padding: 16px 0;
   margin: 16px 0;
@@ -17,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row wrap;
 }
 
 .cart-price {
@@ -33,12 +35,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: row wrap;
 }
 
 .cart-actions {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: row wrap;
 }
 
 .cart-item button {
@@ -58,6 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: row wrap;
 }
 
 .cart-item button:hover,
