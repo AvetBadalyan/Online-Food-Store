@@ -6,7 +6,7 @@ import CartContext from "./../../Context/cart-context";
 export default function HeaderCartButton({ showCartHandler }) {
   // add bump effect on Cart button when adding items
   const [isBump, setIsBump] = useState(false);
-  const buttonWithBump = `button ${isBump ? "bump" : ""}`;
+  const buttonWithBump = `cart-button ${isBump ? "bump" : ""}`;
 
   // calculate the total number of items in the cart with array reduce method
   const cartCtx = useContext(CartContext);

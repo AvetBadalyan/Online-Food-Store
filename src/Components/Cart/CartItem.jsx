@@ -6,8 +6,8 @@ export default function CartItem(props) {
 
   return (
     <li className="cart-item">
+      <h2> {props.name}</h2>
       <div>
-        <h2> {props.name}</h2>
         <div className="cart-summary">
           <span className="cart-price">{price}</span>
           <span className="cart-amount"> x {props.amount} </span>

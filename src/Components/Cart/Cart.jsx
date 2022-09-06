@@ -86,7 +86,7 @@ export default function Cart({ hideCartHandler }) {
       {cartItems}
       <div className="cart-modal-content">
         <div className="total">
-          <div>Total Amount </div>
+          <div>Total Amount</div>
           <div>{totalAmount}</div>
         </div>
         {isOrderClicked && !isLoggedIn && <AuthForm setToken={setToken} />}

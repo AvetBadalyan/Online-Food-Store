@@ -1,16 +1,21 @@
-.button {
+.cart-button {
   cursor: pointer;
   font: inherit;
   border: none;
   background-color: rgb(77, 22, 1);
   color: white;
-  padding: 1.4vh 5.6vh;
+  padding: 1vh 5vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-flow: row wrap;
   border-radius: 25px;
   font-weight: bold;
+}
+
+@media (max-width: 902px) {
+  .cart-button {
+    padding: 12px 14px;
+  }
 }
 
 @media (max-width: 412px) and (orientation: portrait) {

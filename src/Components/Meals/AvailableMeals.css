@@ -1,8 +1,8 @@
 .meals {
-  max-width: 960px;
-  width: 90%;
+  width: 100%;
   margin: 32px auto;
   animation: meals-appear 1s ease-out forwards;
+  
 }
 
 .meals ul {

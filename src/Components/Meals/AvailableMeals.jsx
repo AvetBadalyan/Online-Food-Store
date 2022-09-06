@@ -98,18 +98,20 @@ export default function AvailableMeals() {
     )
   );
   return (
-    <section className="meals">
-      <Card>
-        {httpError && (
-          <section className="MealsError">
-            <p>
-              {httpError} - Something went wrong with server, please choose a
-              meal from available meals
-            </p>
-          </section>
-        )}
-        <ul>{mealsList}</ul>
-      </Card>
-    </section>
+    <div className="container">
+      <section className="meals">
+        <Card>
+          {httpError && (
+            <section className="MealsError">
+              <p>
+                {httpError} - Something went wrong with server, please choose a
+                meal from available meals
+              </p>
+            </section>
+          )}
+          <ul>{mealsList}</ul>
+        </Card>
+      </section>
+    </div>
   );
 }

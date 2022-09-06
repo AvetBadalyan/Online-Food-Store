@@ -20,17 +20,17 @@ export default function MealItem(props) {
   // show single meal with name, price, description and image
   return (
     <li className="meal">
-      <div className="meal-item-text-with-image">
-        <div className="meal-item-text">
-          <h3>{props.name}</h3>
-          <div className="description">{props.description}</div>
-          <div className="price">{price}</div>
+      <div className="meal-item-text">
+        <div className="meal-name">
+          <p>{props.name}</p>
         </div>
-        <div className="meal-item-image">
-          <img src={props.photo} alt="meal-item" />
-        </div>
+        <div className="description">{props.description}</div>
+        <div className="price">{price}</div>
       </div>
-      <div>
+      <div className="meal-item-image">
+        <img src={props.photo} alt="meal-item" />
+      </div>
+      <div className="form-container">
         <MealItemForm id={props.id} onAddToCart={addToCartHandler} />
       </div>
     </li>

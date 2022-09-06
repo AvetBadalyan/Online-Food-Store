@@ -2,11 +2,15 @@
   text-align: center;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   height: 100%;
+  margin: 5px 0;
+  /* width: 30%; */
 }
 
 .meal-item-form button {
+  width: fit-content;
   font: inherit;
   cursor: pointer;
   background-color: rgba(138, 43, 6, 0.95);
@@ -15,6 +19,13 @@
   padding: 4px 32px;
   border-radius: 20px;
   font-weight: bold;
+}
+
+@media (max-width: 1140px) and (orientation: portrait) {
+  .meal-item-form button {
+    /* width: 100%; */
+    width: 200px;
+  }
 }
 
 @media (max-width: 412px) and (orientation: portrait) {

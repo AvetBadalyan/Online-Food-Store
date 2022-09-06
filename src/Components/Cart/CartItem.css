@@ -14,11 +14,11 @@
 }
 
 .cart-summary {
-  width: 160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
+  gap: 10px;
 }
 
 .cart-price {
@@ -69,4 +69,36 @@
 .cart-item button:active {
   background-color: rgb(138, 43, 6);
   color: white;
+}
+
+@media (max-width: 412px) and (orientation: portrait) {
+  .cart-item * {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .cart-item h2 {
+    margin: 0 auto;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2px;
+    gap: 2px;
+    width: 160px;
+  }
+
+  .cart-actions {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
