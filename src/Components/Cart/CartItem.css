@@ -13,6 +13,10 @@
   color: rgb(54, 54, 54);
 }
 
+.cart-item-name {
+  width: 32%;
+}
+
 .cart-summary {
   display: flex;
   justify-content: space-between;
@@ -84,6 +88,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  .cart-item-name {
+  width: 90%;
+}
 
   .cart-summary {
     display: flex;

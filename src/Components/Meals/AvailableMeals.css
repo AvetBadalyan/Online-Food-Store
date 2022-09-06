@@ -2,7 +2,7 @@
   width: 100%;
   margin: 32px auto;
   animation: meals-appear 1s ease-out forwards;
-  
+  height: auto;
 }
 
 .meals ul {
