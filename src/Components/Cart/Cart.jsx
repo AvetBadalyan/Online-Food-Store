@@ -115,7 +115,7 @@ export default function Cart({ hideCartHandler }) {
   const isSubmittedModalContent = (
     <div className="success-order">
       <p>Successfully sent the order ✅ </p>
-      <button className="button" onClick={hideCartHandler}>
+      <button className="cart-button" onClick={hideCartHandler}>
         Close
       </button>
     </div>
