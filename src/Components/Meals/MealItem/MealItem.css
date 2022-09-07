@@ -78,9 +78,17 @@
     font-size: large;
     font-style: italic;
   }
+
+  .meal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vw;
+  }
 }
 
-@media (max-width: 413px) and (orientation: portrait) {
+@media only screen and (max-width: 413px) and (orientation: portrait) {
   .meal {
     padding: 10px 0;
     flex-direction: column;

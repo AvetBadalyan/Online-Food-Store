@@ -9,11 +9,9 @@ export default function CartItem(props) {
       <div className="cart-item-name">
         <h2> {props.name}</h2>
       </div>
-      <div>
-        <div className="cart-summary">
-          <span className="cart-price">{price}</span>
-          <span className="cart-amount"> x {props.amount} </span>
-        </div>
+      <div className="cart-summary">
+        <span className="cart-price">{price}</span>
+        <span className="cart-amount"> x {props.amount} </span>
       </div>
       <div className="cart-actions">
         <button onClick={props.onRemove} className="cart-item-button">
