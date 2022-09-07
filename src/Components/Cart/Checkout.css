@@ -12,6 +12,8 @@
 .control label {
   font-weight: bold;
   margin-bottom: 0.25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .control input {
