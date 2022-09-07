@@ -1,3 +1,5 @@
+# Online Food Store Website with Responsive & Adaptive design both for Web and Tablets and Mobile!
+
 ## This is an online food store with a nice styling and principal functions - view meals menu with meal name, price and description, click on add button to add the meal to the cart, control the amount of chosen item, add or remove items to/from the cart. Also Authentication with Firebase - Sign up and login, make an order, send order data to server, get confirmation about receiving the order.
 
 Link to the Website - [https://online-foodstore.web.app/](https://online-foodstore.web.app/).
@@ -9,6 +11,8 @@ Link to the Website - [https://online-foodstore.web.app/](https://online-foodsto
 ![screenshot](./src/assets/Screenshots/login.jpg)
 ![screenshot](./src/assets/Screenshots/input.jpg)
 ![screenshot](./src/assets/Screenshots/valid.jpg)
+![screenshot](./src/assets/Screenshots/mobile.jpg)
+![screenshot](./src/assets/Screenshots/mobile2.jpg)
 ![screenshot](./src/assets/Screenshots/foodStore7.jpg)
 ![screenshot](./src/assets/Screenshots/foodStore8.jpg)
 ![screenshot](./src/assets/Screenshots/foodStore9.jpg)
