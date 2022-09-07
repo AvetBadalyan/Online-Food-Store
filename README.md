@@ -16,7 +16,8 @@ Link to the Website - [https://online-foodstore.web.app/](https://online-foodsto
 ![screenshot](./src/assets/Screenshots/foodStore7.jpg)
 ![screenshot](./src/assets/Screenshots/foodStore8.jpg)
 ![screenshot](./src/assets/Screenshots/foodStore9.jpg)
-![screenshot](./src/assets/Screenshots/auth.jpg)
+![screenshot](./src/assets/Screenshots/auth.jpg) 
+
 
 # Getting Started with Create React App
 
