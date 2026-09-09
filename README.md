@@ -1,91 +1,157 @@
-# Online Food Store Website with Responsive & Adaptive design both for Web and Tablets and Mobile!
+# Avet's Food Store
 
-## This is an online food store with a nice styling and principal functions - view meals menu with meal name, price and description, click on add button to add the meal to the cart, control the amount of chosen item, add or remove items to/from the cart. Also Authentication with Firebase - Sign up and login, make an order, send order data to server, get confirmation about receiving the order.
+A modern, responsive food ordering web application built with React 19 and
+Firebase. Features a curated menu with authentic Armenian dishes alongside
+international cuisine.
 
-Link to the Website - [https://online-foodstore.web.app/](https://online-foodstore.web.app/).
+**Live Demo:**
+[https://online-foodstore.web.app](https://online-foodstore.web.app)
 
-![screenshot](./src/assets/Screenshots/foodStore1.jpg)
-![screenshot](./src/assets/Screenshots/foodStoreScreen2.jpg)
-![screenshot](./src/assets/Screenshots/empty%20cart.jpg)
-![screenshot](./src/assets/Screenshots/foodStoreScreen4.jpg)
-![screenshot](./src/assets/Screenshots/login.jpg)
-![screenshot](./src/assets/Screenshots/input.jpg)
-![screenshot](./src/assets/Screenshots/valid.jpg)
-![screenshot](./src/assets/Screenshots/mobile.jpg)
-![screenshot](./src/assets/Screenshots/mobile2.jpg)
-![screenshot](./src/assets/Screenshots/foodStore7.jpg)
-![screenshot](./src/assets/Screenshots/foodStore8.jpg)
-![screenshot](./src/assets/Screenshots/foodStore9.jpg)
-![screenshot](./src/assets/Screenshots/auth.jpg) 
+## Features
 
+- **40+ Dishes** across 10 categories including Armenian, Burgers, Pizza, Sushi,
+  Pasta, Salads, Soups, Desserts, and Drinks
+- **Real-time Cart** with localStorage persistence
+- **User Authentication** via Firebase (sign up, login, logout)
+- **Order Management** with Firebase Realtime Database
+- **Responsive Design** optimized for desktop, tablet, and mobile
+- **Search & Filter** by category, name, or description
+- **Sorting Options** by price, rating, or name
+- **Smooth Animations** powered by Framer Motion
 
-# Getting Started with Create React App
+## Tech Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **Frontend:** React 19, React Router v7, CSS Modules
+- **State Management:** React Context + useReducer
+- **Forms:** React Hook Form + Zod validation
+- **Animations:** Framer Motion
+- **Backend:** Firebase Authentication & Realtime Database
+- **Build Tool:** Vite
+- **Hosting:** Firebase Hosting
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Firebase project (for auth and database)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/AvetBadalyan/Online-Food-Store.git
+   cd Online-Food-Store
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file based on `.env.example`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Add your Firebase configuration to `.env`:
+
+   ```
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   VITE_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
+
+5. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start development server         |
+| `npm run build`   | Build for production             |
+| `npm run preview` | Preview production build locally |
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/       # Reusable UI components
+│   ├── CartDrawer/   # Slide-out cart panel
+│   ├── Layout/       # Header, Footer, Hero, Layout
+│   ├── MealCard/     # Individual meal display
+│   └── UI/           # Button, Input, Loader, Modal, etc.
+├── context/          # React Context providers
+│   ├── AuthContext   # Firebase authentication state
+│   └── CartContext   # Shopping cart state
+├── data/             # Static meal data
+├── hooks/            # Custom React hooks
+├── pages/            # Route components
+├── services/         # Firebase configuration & API
+├── styles/           # Global CSS variables
+├── utils/            # Helper functions
+└── validators/       # Zod validation schemas
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Key Features Explained
 
-### `npm test`
+### Armenian Cuisine
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app features 8 authentic Armenian dishes with images sourced from Wikimedia
+Commons:
 
-### `npm run build`
+- Khorovats (BBQ)
+- Tolma (Dolma)
+- Lahmajun
+- Khash
+- Harissa
+- Ghapama
+- Jingalov Hats
+- Spas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Cart Persistence
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Cart data is automatically saved to localStorage, so users don't lose their
+selections when refreshing the page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Protected Routes
 
-### `npm run eject`
+Checkout and Profile pages require authentication. Users are redirected to login
+and returned to their intended destination after signing in.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Order History
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Authenticated users can view their complete order history on the Profile page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app is configured for Firebase Hosting:
 
-## Learn More
+```bash
+npm run build
+firebase deploy
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is open source and available under the [MIT License](LICENSE).
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Avet Badalyan**
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [@AvetBadalyan](https://github.com/AvetBadalyan)

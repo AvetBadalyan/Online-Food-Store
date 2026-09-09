@@ -1,0 +1,40 @@
+.tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	padding: 3px var(--space-2);
+	border-radius: var(--radius-full);
+	font-size: 11px;
+	font-weight: var(--font-bold);
+	text-transform: capitalize;
+	white-space: nowrap;
+	letter-spacing: 0.03em;
+	/* Solid dark backdrop so tags are legible on any image */
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border: 1px solid transparent;
+}
+
+.bestseller {
+	background: rgba(245, 200, 66, 0.92);
+	color: #1a1200;
+	border-color: rgba(245, 200, 66, 0.4);
+}
+
+.spicy {
+	background: rgba(232, 82, 26, 0.92);
+	color: #fff;
+	border-color: rgba(232, 82, 26, 0.4);
+}
+
+.vegan {
+	background: rgba(61, 187, 110, 0.92);
+	color: #001a08;
+	border-color: rgba(61, 187, 110, 0.4);
+}
+
+.vegetarian {
+	background: rgba(61, 187, 110, 0.75);
+	color: #001a08;
+	border-color: rgba(61, 187, 110, 0.3);
+}

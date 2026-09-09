@@ -1,0 +1,309 @@
+.page {
+	padding: var(--space-10) 0 var(--space-16);
+}
+
+/* ─── Header ───────────────────────────────────────────────── */
+.profileHeader {
+	display: flex;
+	align-items: center;
+	gap: var(--space-5);
+	margin-bottom: var(--space-10);
+	padding-bottom: var(--space-8);
+	border-bottom: 1px solid var(--color-border);
+}
+
+.avatar {
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	background: linear-gradient(
+		135deg,
+		var(--color-primary),
+		var(--color-primary-dark)
+	);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-display);
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.userInfo {
+}
+
+.userName {
+	font-family: var(--font-display);
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	color: var(--color-text);
+}
+
+.userEmail {
+	font-size: var(--text-sm);
+	color: var(--color-text-muted);
+	margin-top: var(--space-1);
+}
+
+/* ─── Section title ────────────────────────────────────────── */
+.sectionTitle {
+	font-family: var(--font-display);
+	font-size: var(--text-xl);
+	font-weight: var(--font-bold);
+	color: var(--color-text);
+	margin-bottom: var(--space-5);
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+}
+
+.orderCount {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 24px;
+	height: 24px;
+	padding: 0 var(--space-2);
+	background: var(--color-primary);
+	color: #fff;
+	border-radius: var(--radius-full);
+	font-size: var(--text-xs);
+	font-weight: var(--font-bold);
+	font-family: var(--font-sans);
+}
+
+/* ─── Orders list ──────────────────────────────────────────── */
+.orders {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+}
+
+/* ─── Order card ───────────────────────────────────────────── */
+.orderCard {
+	background: var(--color-bg-card);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	transition: border-color var(--transition-base);
+}
+
+.orderCard:hover {
+	border-color: var(--color-text-subtle);
+}
+
+.orderCardHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-4) var(--space-5);
+	border-bottom: 1px solid var(--color-border);
+	flex-wrap: wrap;
+	gap: var(--space-3);
+}
+
+.orderId {
+	font-size: var(--text-sm);
+	font-weight: var(--font-semi);
+	color: var(--color-text);
+}
+
+.orderId span {
+	color: var(--color-primary);
+}
+
+.orderDate {
+	font-size: var(--text-xs);
+	color: var(--color-text-subtle);
+}
+
+.orderStatus {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	padding: 3px var(--space-3);
+	border-radius: var(--radius-full);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semi);
+}
+
+.statusDelivered {
+	background: rgba(61, 187, 110, 0.12);
+	color: var(--color-success);
+}
+
+.statusPending {
+	background: rgba(245, 166, 35, 0.12);
+	color: var(--color-warning);
+}
+
+.orderCardBody {
+	padding: var(--space-4) var(--space-5);
+}
+
+.orderItems {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	margin-bottom: var(--space-4);
+}
+
+.orderItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: var(--text-sm);
+}
+
+.orderItemName {
+	color: var(--color-text-muted);
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+.orderItemQty {
+	font-size: var(--text-xs);
+	background: var(--color-bg-elevated);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	padding: 1px var(--space-2);
+	color: var(--color-text-subtle);
+}
+
+.orderItemPrice {
+	font-weight: var(--font-semi);
+	color: var(--color-text);
+}
+
+.orderCardFooter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: var(--space-4);
+	border-top: 1px solid var(--color-border);
+	flex-wrap: wrap;
+	gap: var(--space-3);
+}
+
+.orderTotal {
+	font-size: var(--text-base);
+	font-weight: var(--font-bold);
+	color: var(--color-text);
+}
+
+.orderTotal span {
+	color: var(--color-primary);
+	font-family: var(--font-display);
+}
+
+.orderPayment {
+	font-size: var(--text-xs);
+	color: var(--color-text-subtle);
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+/* ─── Address ──────────────────────────────────────────────── */
+.orderAddress {
+	font-size: var(--text-xs);
+	color: var(--color-text-subtle);
+	margin-top: var(--space-2);
+}
+
+/* ─── Two-column profile layout ─────────────────────────────── */
+.profileLayout {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: var(--space-8);
+	align-items: start;
+}
+
+.accountCard {
+	background: var(--color-bg-card);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: sticky;
+	top: calc(var(--header-height) + var(--space-6));
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-5);
+}
+
+.accountDetails {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+}
+
+.accountDetail {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-3);
+}
+
+.accountDetailIcon {
+	width: 28px;
+	height: 28px;
+	border-radius: var(--radius-sm);
+	background: rgba(232, 82, 26, 0.1);
+	color: var(--color-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.accountDetailLabel {
+	display: block;
+	font-size: var(--text-xs);
+	color: var(--color-text-subtle);
+	margin-bottom: 2px;
+}
+
+.accountDetailValue {
+	display: block;
+	font-size: var(--text-sm);
+	color: var(--color-text);
+	font-weight: var(--font-medium);
+	word-break: break-all;
+}
+
+.logoutBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	width: 100%;
+	padding: var(--space-3);
+	border-radius: var(--radius-md);
+	font-size: var(--text-sm);
+	font-weight: var(--font-semi);
+	color: var(--color-error);
+	border: 1.5px solid rgba(232, 82, 82, 0.25);
+	transition:
+		background var(--transition-base),
+		border-color var(--transition-base);
+}
+.logoutBtn:hover {
+	background: rgba(232, 82, 82, 0.08);
+	border-color: rgba(232, 82, 82, 0.5);
+}
+
+.ordersSection {
+}
+
+@media (max-width: 768px) {
+	.profileLayout {
+		grid-template-columns: 1fr;
+	}
+
+	.accountCard {
+		position: static;
+	}
+}
