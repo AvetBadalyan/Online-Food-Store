@@ -39,7 +39,7 @@ export default function Hero({ onScrollToMenu }) {
 					</h1>
 
 					<p className={styles.heroSub}>
-						40+ hand-crafted dishes from around the world, made fresh and
+						32+ hand-crafted dishes from around the world, made fresh and
 						delivered straight to your door.
 					</p>
 
@@ -69,7 +69,7 @@ export default function Hero({ onScrollToMenu }) {
 					transition={{ delay: 0.4, duration: 0.5 }}
 				>
 					{[
-						{ num: '40+', label: 'Dishes' },
+						{ num: '32+', label: 'Dishes' },
 						{ num: '4.8★', label: 'Rating' },
 						{ num: '30min', label: 'Delivery' }
 					].map(({ num, label }) => (

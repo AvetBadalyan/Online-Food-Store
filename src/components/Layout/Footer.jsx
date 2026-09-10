@@ -16,7 +16,7 @@ export default function Footer() {
 						</div>
 						<p className={styles.brandTagline}>
 							Fresh ingredients, bold flavours, delivered to your door. Order
-							from our menu of 40+ dishes crafted with care.
+							from our menu of 32+ dishes crafted with care.
 						</p>
 					</div>
 
