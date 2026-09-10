@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
 import toast from 'react-hot-toast'
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi'
 import { useCart } from '../../context/CartContext'
@@ -9,17 +8,10 @@ import styles from './Hero.module.css'
 const HERO_IMAGE =
 	'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=85&fit=crop'
 
-// Pre-filter at module level — never changes
 const TOP_RATED_MEALS = MEALS.filter(m => m.rating >= 4.7)
 
 export default function Hero() {
 	const { addItem } = useCart()
-	const timerRef = useRef(null)
-
-	// Clear any pending timer on unmount
-	useEffect(() => {
-		return () => clearTimeout(timerRef.current)
-	}, [])
 
 	function handleSurpriseMe() {
 		const meal = TOP_RATED_MEALS[Math.floor(Math.random() * TOP_RATED_MEALS.length)]

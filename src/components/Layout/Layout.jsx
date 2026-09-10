@@ -1,7 +1,6 @@
-import { AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Toaster } from 'react-hot-toast'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import CartDrawer from '../CartDrawer/CartDrawer'
 import Footer from './Footer'
 import Header from './Header'
@@ -9,7 +8,6 @@ import styles from './Layout.module.css'
 
 export default function Layout() {
 	const [cartOpen, setCartOpen] = useState(false)
-	const location = useLocation()
 
 	return (
 		<div className={styles.layout}>
@@ -34,9 +32,7 @@ export default function Layout() {
 			<Header onCartOpen={() => setCartOpen(true)} />
 
 			<main className={styles.main}>
-				<AnimatePresence mode="wait" initial={false}>
-					<Outlet key={location.pathname} />
-				</AnimatePresence>
+				<Outlet />
 			</main>
 
 			<Footer />
