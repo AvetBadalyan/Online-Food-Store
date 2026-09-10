@@ -44,7 +44,7 @@ export default function Hero({ onScrollToMenu }) {
 					</p>
 
 					<div className={styles.heroActions}>
-						{/* Opens cart to start ordering */}
+						{/* Jumps to the menu filtered to Armenian dishes */}
 						<button
 							className={styles.heroBtn}
 							onClick={() => navigate('/?category=Armenian')}

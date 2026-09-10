@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { createPortal } from 'react-dom'
-import { FiMinus, FiPlus, FiShoppingBag, FiX } from 'react-icons/fi'
+import { FiShoppingBag, FiX } from 'react-icons/fi'
 import { MdRestaurantMenu } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 import { formatPrice } from '../../utils/formatters'
 import { FREE_DELIVERY_THRESHOLD } from '../../utils/orderConstants'
 import Button from '../UI/Button'
+import QuantityStepper from '../UI/QuantityStepper'
 import styles from './CartDrawer.module.css'
 
 const backdropVariants = {
@@ -126,23 +127,13 @@ export default function CartDrawer({ isOpen, onClose }) {
 												</span>
 											</div>
 
-											<div className={styles.itemControls}>
-												<button
-													className={styles.qtyBtn}
-													onClick={() => removeItem(item.id)}
-													aria-label={`Remove one ${item.name}`}
-												>
-													<FiMinus size={12} />
-												</button>
-												<span className={styles.qtyValue}>{item.amount}</span>
-												<button
-													className={styles.qtyBtn}
-													onClick={() => addItem({ ...item, amount: 1 })}
-													aria-label={`Add one more ${item.name}`}
-												>
-													<FiPlus size={12} />
-												</button>
-											</div>
+											<QuantityStepper
+												value={item.amount}
+												onDecrement={() => removeItem(item.id)}
+												onIncrement={() => addItem({ ...item, amount: 1 })}
+												decrementLabel={`Remove one ${item.name}`}
+												incrementLabel={`Add one more ${item.name}`}
+											/>
 										</motion.li>
 									))}
 								</AnimatePresence>

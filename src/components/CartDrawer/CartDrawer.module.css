@@ -142,40 +142,6 @@
 	font-weight: var(--font-semi);
 }
 
-.itemControls {
-	display: flex;
-	align-items: center;
-	gap: var(--space-2);
-}
-
-.qtyBtn {
-	width: 28px;
-	height: 28px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: var(--radius-sm);
-	border: 1.5px solid var(--color-border);
-	color: var(--color-text-muted);
-	transition:
-		color var(--transition-fast),
-		border-color var(--transition-fast),
-		background var(--transition-fast);
-}
-.qtyBtn:hover {
-	color: var(--color-text);
-	border-color: var(--color-text-subtle);
-	background: var(--color-bg-card-hover);
-}
-
-.qtyValue {
-	min-width: 20px;
-	text-align: center;
-	font-size: var(--text-sm);
-	font-weight: var(--font-semi);
-	color: var(--color-text);
-}
-
 /* ─── Empty state ──────────────────────────────────────────── */
 .empty {
 	flex: 1;

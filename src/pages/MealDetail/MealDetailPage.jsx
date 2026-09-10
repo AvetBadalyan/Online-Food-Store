@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import { FiArrowLeft, FiMinus, FiPlus, FiShoppingCart } from 'react-icons/fi'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { FiArrowLeft, FiShoppingCart } from 'react-icons/fi'
+import { Link, useParams } from 'react-router-dom'
+import Button from '../../components/UI/Button'
+import QuantityStepper from '../../components/UI/QuantityStepper'
 import Rating from '../../components/UI/Rating'
 import { SkeletonBlock } from '../../components/UI/Skeleton'
 import Tag from '../../components/UI/Tag'
@@ -13,7 +15,6 @@ import styles from './MealDetailPage.module.css'
 
 export default function MealDetailPage() {
 	const { id } = useParams()
-	const navigate = useNavigate()
 	const { meal, loading, error } = useMealDetail(id)
 	const { addItem } = useCart()
 	const [quantity, setQuantity] = useState(1)
@@ -148,30 +149,23 @@ export default function MealDetailPage() {
 							{!isOutOfStock && (
 								<div className={styles.quantityRow}>
 									<span className={styles.quantityLabel}>Quantity</span>
-									<div className={styles.quantityControls}>
-										<button
-											className={styles.qtyBtn}
-											onClick={() => setQuantity(q => Math.max(1, q - 1))}
-											disabled={quantity <= 1}
-											aria-label="Decrease quantity"
-										>
-											<FiMinus size={14} />
-										</button>
-										<span className={styles.qtyValue}>{quantity}</span>
-										<button
-											className={styles.qtyBtn}
-											onClick={() => setQuantity(q => Math.min(maxQty, q + 1))}
-											disabled={quantity >= maxQty}
-											aria-label="Increase quantity"
-										>
-											<FiPlus size={14} />
-										</button>
-									</div>
+									<QuantityStepper
+										value={quantity}
+										variant="grouped"
+										size="md"
+										onDecrement={() => setQuantity(q => Math.max(1, q - 1))}
+										onIncrement={() =>
+											setQuantity(q => Math.min(maxQty, q + 1))
+										}
+										disableDecrement={quantity <= 1}
+										disableIncrement={quantity >= maxQty}
+									/>
 								</div>
 							)}
 
-							<button
-								className={styles.addToCartBtn}
+							<Button
+								size="lg"
+								full
 								onClick={handleAdd}
 								disabled={isOutOfStock}
 							>
@@ -179,7 +173,7 @@ export default function MealDetailPage() {
 								{isOutOfStock
 									? 'Out of Stock'
 									: `Add ${quantity > 1 ? `×${quantity}` : ''} to Cart — ${formatPrice(meal.price * quantity)}`}
-							</button>
+							</Button>
 						</div>
 					</div>
 				</div>

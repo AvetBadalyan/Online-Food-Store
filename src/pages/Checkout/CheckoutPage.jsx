@@ -9,7 +9,7 @@ import {
 	FiCheck,
 	FiCheckCircle
 } from 'react-icons/fi'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Button from '../../components/UI/Button'
 import Input from '../../components/UI/Input'
 import { useAuth } from '../../context/AuthContext'
@@ -133,7 +133,6 @@ function OrderSummary({ items, totalAmount }) {
 export default function CheckoutPage() {
 	const { items, totalAmount, clearCart } = useCart()
 	const { user } = useAuth()
-	const navigate = useNavigate()
 
 	const [step, setStep] = useState(1)
 	const [paymentMethod, setPaymentMethod] = useState('cash')

@@ -2,114 +2,112 @@
 @import './styles/variables.css';
 
 /* ─── Reset & Base ───────────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
+	font-size: 16px;
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  line-height: var(--leading-normal);
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: var(--font-sans);
+	font-size: var(--text-base);
+	line-height: var(--leading-normal);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
+	font-family: inherit;
+	cursor: pointer;
+	border: none;
+	background: none;
 }
 
-ul, ol {
-  list-style: none;
+ul,
+ol {
+	list-style: none;
 }
 
-input, textarea, select {
-  font-family: inherit;
-  font-size: inherit;
+input,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+	width: 6px;
+	height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+	background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: var(--radius-full);
+	background: var(--color-border);
+	border-radius: var(--radius-full);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-subtle);
+	background: var(--color-text-subtle);
 }
 
 /* ─── Focus visible ──────────────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: var(--radius-sm);
 }
 
 /* ─── Selection ──────────────────────────────────────────────────────────── */
 ::selection {
-  background: var(--color-primary);
-  color: #fff;
+	background: var(--color-primary);
+	color: #fff;
 }
 
 /* ─── Utility classes ────────────────────────────────────────────────────── */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border-width: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }
 
 .container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin-inline: auto;
-  padding-inline: var(--space-6);
+	width: 100%;
+	max-width: var(--max-width);
+	margin-inline: auto;
+	padding-inline: var(--space-6);
 }
 
 @media (max-width: 640px) {
-  .container {
-    padding-inline: var(--space-4);
-  }
-}
-
-/* ─── React Hot Toast override ───────────────────────────────────────────── */
-.hot-toast-bar {
-  background: var(--color-bg-elevated) !important;
-  color: var(--color-text) !important;
-  border: 1px solid var(--color-border) !important;
+	.container {
+		padding-inline: var(--space-4);
+	}
 }
