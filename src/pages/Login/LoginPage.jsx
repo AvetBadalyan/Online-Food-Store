@@ -57,25 +57,16 @@ export default function LoginPage() {
 				</div>
 
 				<h1 className={styles.title}>Welcome back</h1>
-				<p className={styles.subtitle}>
-					Sign in to track your orders and checkout faster.
-				</p>
+				<p className={styles.subtitle}>Sign in to track your orders and checkout faster.</p>
 
 				{error && (
-					<div
-						className={styles.errorBanner}
-						role="alert"
-					>
+					<div className={styles.errorBanner} role="alert">
 						<FiAlertCircle size={15} />
 						{error}
 					</div>
 				)}
 
-				<form
-					className={styles.form}
-					onSubmit={handleSubmit(onSubmit)}
-					noValidate
-				>
+				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 					<Input
 						label="Email"
 						type="email"
@@ -97,7 +88,7 @@ export default function LoginPage() {
 						type="submit"
 						size="lg"
 						full
-						style={{ marginTop: 'var(--space-2)' }}
+						className={styles.submitBtn}
 						disabled={isSubmitting || loading}
 					>
 						{isSubmitting || loading ? (
@@ -119,22 +110,14 @@ export default function LoginPage() {
 
 				<p className={styles.switchText}>
 					Don't have an account?
-					<Link
-						to="/register"
-						className={styles.switchLink}
-					>
+					<Link to="/register" className={styles.switchLink}>
 						Create one
 					</Link>
 				</p>
 
-				<div style={{ marginTop: 'var(--space-3)' }}>
-					<Link
-						to="/"
-						className={styles.guestLink}
-					>
-						Continue as guest →
-					</Link>
-				</div>
+				<Link to="/" className={styles.guestLink}>
+					Continue as guest →
+				</Link>
 			</motion.div>
 		</div>
 	)

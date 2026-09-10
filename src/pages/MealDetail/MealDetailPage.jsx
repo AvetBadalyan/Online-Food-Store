@@ -28,30 +28,14 @@ export default function MealDetailPage() {
 		return (
 			<div className="container">
 				<div className={styles.page}>
-					<SkeletonBlock
-						width="120px"
-						height="36px"
-						className={styles.skeletonBackBtn}
-					/>
+					<SkeletonBlock width="120px" height="36px" className={styles.skeletonBackBtn} />
 					<div className={styles.layout}>
-						<SkeletonBlock
-							height="380px"
-							radius="xl"
-						/>
+						<SkeletonBlock height="380px" radius="xl" />
 						<div className={styles.skeletonInfoCol}>
-							<SkeletonBlock
-								width="60%"
-								height="20px"
-							/>
-							<SkeletonBlock
-								width="90%"
-								height="48px"
-							/>
+							<SkeletonBlock width="60%" height="20px" />
+							<SkeletonBlock width="90%" height="48px" />
 							<SkeletonBlock height="80px" />
-							<SkeletonBlock
-								height="160px"
-								radius="xl"
-							/>
+							<SkeletonBlock height="160px" radius="xl" />
 						</div>
 					</div>
 				</div>
@@ -64,10 +48,7 @@ export default function MealDetailPage() {
 			<div className="container">
 				<div className={styles.page}>
 					<p className={styles.errorMsg}>{error ?? 'Meal not found.'}</p>
-					<Link
-						to="/"
-						className={styles.backBtn}
-					>
+					<Link to="/" className={styles.backBtn}>
 						<FiArrowLeft size={15} /> Back to menu
 					</Link>
 				</div>
@@ -86,34 +67,22 @@ export default function MealDetailPage() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.4 }}
 			>
-				<Link
-					to="/"
-					className={styles.backBtn}
-				>
+				<Link to="/" className={styles.backBtn}>
 					<FiArrowLeft size={15} />
 					Back to menu
 				</Link>
 
 				<div className={styles.layout}>
-					{/* Image column */}
-					<div className={styles.imageCol}>
-						<div className={styles.imageWrapper}>
-							<img
-								src={meal.image}
-								alt={meal.name}
-								className={styles.image}
-							/>
-							{meal.tags?.length > 0 && (
-								<div className={styles.tags}>
-									{meal.tags.map(tag => (
-										<Tag
-											key={tag}
-											type={tag}
-										/>
-									))}
-								</div>
-							)}
-						</div>
+					{/* Image */}
+					<div className={styles.imageWrapper}>
+						<img src={meal.image} alt={meal.name} className={styles.image} />
+						{meal.tags?.length > 0 && (
+							<div className={styles.tags}>
+								{meal.tags.map(tag => (
+									<Tag key={tag} type={tag} />
+								))}
+							</div>
+						)}
 					</div>
 
 					{/* Info column */}
@@ -123,19 +92,14 @@ export default function MealDetailPage() {
 						<p className={styles.description}>{meal.description}</p>
 
 						<div className={styles.meta}>
-							<Rating
-								value={meal.rating}
-								numReviews={meal.numReviews}
-							/>
+							<Rating value={meal.rating} numReviews={meal.numReviews} />
 							<div className={styles.divider} />
 							<span
 								className={`${styles.stockBadge} ${
 									isOutOfStock ? styles.outOfStock : styles.inStock
 								}`}
 							>
-								{isOutOfStock
-									? 'Out of stock'
-									: `${meal.countInStock} available`}
+								{isOutOfStock ? 'Out of stock' : `${meal.countInStock} available`}
 							</span>
 						</div>
 
@@ -154,21 +118,14 @@ export default function MealDetailPage() {
 										variant="grouped"
 										size="md"
 										onDecrement={() => setQuantity(q => Math.max(1, q - 1))}
-										onIncrement={() =>
-											setQuantity(q => Math.min(maxQty, q + 1))
-										}
+										onIncrement={() => setQuantity(q => Math.min(maxQty, q + 1))}
 										disableDecrement={quantity <= 1}
 										disableIncrement={quantity >= maxQty}
 									/>
 								</div>
 							)}
 
-							<Button
-								size="lg"
-								full
-								onClick={handleAdd}
-								disabled={isOutOfStock}
-							>
+							<Button size="lg" full onClick={handleAdd} disabled={isOutOfStock}>
 								<FiShoppingCart size={18} />
 								{isOutOfStock
 									? 'Out of Stock'

@@ -1,14 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
-import {
-	FiChevronDown,
-	FiLogOut,
-	FiMenu,
-	FiShoppingBag,
-	FiUser,
-	FiX
-} from 'react-icons/fi'
+import { FiChevronDown, FiLogOut, FiMenu, FiShoppingBag, FiUser, FiX } from 'react-icons/fi'
 import { MdRestaurantMenu } from 'react-icons/md'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
@@ -59,10 +52,7 @@ export default function Header({ onCartOpen }) {
 		<header className={styles.header}>
 			<div className={`container ${styles.inner}`}>
 				{/* Logo */}
-				<Link
-					to="/"
-					className={styles.logo}
-				>
+				<Link to="/" className={styles.logo}>
 					<span className={styles.logoIcon}>
 						<MdRestaurantMenu />
 					</span>
@@ -81,17 +71,12 @@ export default function Header({ onCartOpen }) {
 					>
 						<FiShoppingBag size={17} />
 						<span>Cart</span>
-						{totalItems > 0 && (
-							<span className={styles.cartBadge}>{totalItems}</span>
-						)}
+						{totalItems > 0 && <span className={styles.cartBadge}>{totalItems}</span>}
 					</button>
 
 					{/* Auth */}
 					{isAuthenticated ? (
-						<div
-							className={styles.userMenu}
-							ref={dropdownRef}
-						>
+						<div className={styles.userMenu} ref={dropdownRef}>
 							<button
 								className={styles.userBtn}
 								onClick={() => setDropdownOpen(v => !v)}
@@ -133,10 +118,7 @@ export default function Header({ onCartOpen }) {
 							</AnimatePresence>
 						</div>
 					) : (
-						<Link
-							to="/login"
-							className={styles.userBtn}
-						>
+						<Link to="/login" className={styles.userBtn}>
 							<FiUser size={15} />
 							<span>Sign in</span>
 						</Link>
@@ -165,36 +147,23 @@ export default function Header({ onCartOpen }) {
 						transition={{ duration: 0.2 }}
 						aria-label="Mobile navigation"
 					>
-						<Link
-							to="/"
-							className={styles.navLink}
-							onClick={() => setMobileOpen(false)}
-						>
+						<Link to="/" className={styles.navLink} onClick={() => setMobileOpen(false)}>
 							Menu
 						</Link>
 						{isAuthenticated ? (
 							<>
-								<Link
-									to="/profile"
-									className={styles.navLink}
-									onClick={() => setMobileOpen(false)}
-								>
+								<Link to="/profile" className={styles.navLink} onClick={() => setMobileOpen(false)}>
 									My Profile
 								</Link>
 								<button
-									className={`${styles.navLink} ${styles.dropdownLogout}`}
-									style={{ textAlign: 'left' }}
+									className={`${styles.navLink} ${styles.navLinkLogout}`}
 									onClick={handleLogout}
 								>
 									Log out
 								</button>
 							</>
 						) : (
-							<Link
-								to="/login"
-								className={styles.navLink}
-								onClick={() => setMobileOpen(false)}
-							>
+							<Link to="/login" className={styles.navLink} onClick={() => setMobileOpen(false)}>
 								Sign in
 							</Link>
 						)}

@@ -14,13 +14,7 @@ import { registerSchema } from '../../validators/authSchemas'
 import styles from '../Login/LoginPage.module.css'
 
 export default function RegisterPage() {
-	const {
-		register: registerUser,
-		isAuthenticated,
-		loading,
-		error,
-		clearError
-	} = useAuth()
+	const { register: registerUser, isAuthenticated, loading, error, clearError } = useAuth()
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -60,25 +54,16 @@ export default function RegisterPage() {
 				</div>
 
 				<h1 className={styles.title}>Create account</h1>
-				<p className={styles.subtitle}>
-					Join to save your orders and checkout in seconds.
-				</p>
+				<p className={styles.subtitle}>Join to save your orders and checkout in seconds.</p>
 
 				{error && (
-					<div
-						className={styles.errorBanner}
-						role="alert"
-					>
+					<div className={styles.errorBanner} role="alert">
 						<FiAlertCircle size={15} />
 						{error}
 					</div>
 				)}
 
-				<form
-					className={styles.form}
-					onSubmit={handleSubmit(onSubmit)}
-					noValidate
-				>
+				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 					<Input
 						label="Full Name"
 						type="text"
@@ -116,7 +101,7 @@ export default function RegisterPage() {
 						type="submit"
 						size="lg"
 						full
-						style={{ marginTop: 'var(--space-2)' }}
+						className={styles.submitBtn}
 						disabled={isSubmitting || loading}
 					>
 						{isSubmitting || loading ? (
@@ -138,10 +123,7 @@ export default function RegisterPage() {
 
 				<p className={styles.switchText}>
 					Already have an account?
-					<Link
-						to="/login"
-						className={styles.switchLink}
-					>
+					<Link to="/login" className={styles.switchLink}>
 						Sign in
 					</Link>
 				</p>

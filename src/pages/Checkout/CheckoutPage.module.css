@@ -42,6 +42,17 @@
 	margin-bottom: var(--space-8);
 }
 
+/* Each step + its following connector sit in a flex item.
+   All but the last one stretch to fill the available space. */
+.stepItem {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+.stepItem:last-child {
+	flex: none;
+}
+
 .step {
 	display: flex;
 	align-items: center;

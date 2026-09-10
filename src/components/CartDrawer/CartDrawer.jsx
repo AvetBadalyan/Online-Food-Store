@@ -31,8 +31,7 @@ const itemVariants = {
 }
 
 export default function CartDrawer({ isOpen, onClose }) {
-	const { items, totalAmount, totalItems, addItem, removeItem, clearCart } =
-		useCart()
+	const { items, totalAmount, totalItems, addItem, removeItem, clearCart } = useCart()
 	const navigate = useNavigate()
 
 	const remaining = FREE_DELIVERY_THRESHOLD - totalAmount
@@ -73,15 +72,9 @@ export default function CartDrawer({ isOpen, onClose }) {
 							<h2 className={styles.title}>
 								<FiShoppingBag size={20} />
 								Cart
-								{totalItems > 0 && (
-									<span className={styles.badge}>{totalItems}</span>
-								)}
+								{totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}
 							</h2>
-							<button
-								className={styles.closeBtn}
-								onClick={onClose}
-								aria-label="Close cart"
-							>
+							<button className={styles.closeBtn} onClick={onClose} aria-label="Close cart">
 								<FiX size={20} />
 							</button>
 						</div>
@@ -147,13 +140,9 @@ export default function CartDrawer({ isOpen, onClose }) {
 										{totalItems} item{totalItems !== 1 ? 's' : ''}
 									</span>
 									{hasFreeDelivery ? (
-										<span className={styles.freeDelivery}>
-											🎉 Free delivery!
-										</span>
+										<span className={styles.freeDelivery}>🎉 Free delivery!</span>
 									) : (
-										<span>
-											{formatPrice(remaining)} away from free delivery
-										</span>
+										<span>{formatPrice(remaining)} away from free delivery</span>
 									)}
 								</div>
 
@@ -170,18 +159,11 @@ export default function CartDrawer({ isOpen, onClose }) {
 									</motion.span>
 								</div>
 
-								<Button
-									size="lg"
-									full
-									onClick={handleCheckout}
-								>
+								<Button size="lg" full onClick={handleCheckout}>
 									Proceed to Checkout →
 								</Button>
 
-								<button
-									className={styles.clearBtn}
-									onClick={clearCart}
-								>
+								<button className={styles.clearBtn} onClick={clearCart}>
 									Clear cart
 								</button>
 							</div>

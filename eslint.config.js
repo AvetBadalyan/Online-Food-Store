@@ -32,15 +32,14 @@ export default [
 			...react.configs.recommended.rules,
 			...react.configs['jsx-runtime'].rules,
 			...reactHooks.configs.recommended.rules,
+			// Disable all ESLint rules that conflict with Prettier
+			...prettier.rules,
 			// New JSX transform — no need to import React in scope
 			'react/react-in-jsx-scope': 'off',
 			'react/prop-types': 'off',
 			// Apostrophes/quotes in JSX text render fine; not worth escaping.
 			'react/no-unescaped-entities': 'off',
-			'react-refresh/only-export-components': [
-				'warn',
-				{ allowConstantExport: true }
-			],
+			'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 			// Catch the class of bug that shipped: undefined identifiers + dead imports
 			'no-undef': 'error',
 			'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }]

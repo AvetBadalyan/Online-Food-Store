@@ -13,27 +13,17 @@ export default function Footer() {
 							Avet's <span>Food</span>
 						</div>
 						<p className={styles.brandTagline}>
-							Fresh ingredients, bold flavours, delivered to your door. Order
-							from our menu of 32+ dishes crafted with care.
+							Fresh ingredients, bold flavours, delivered to your door. Order from our menu of 32+
+							dishes crafted with care.
 						</p>
 					</div>
 
 					<div>
 						<p className={styles.colTitle}>Menu</p>
 						<ul className={styles.colLinks}>
-							{[
-								'Armenian',
-								'Burgers',
-								'Pizza',
-								'Sushi',
-								'Pasta',
-								'Desserts'
-							].map(cat => (
+							{['Armenian', 'Burgers', 'Pizza', 'Sushi', 'Pasta', 'Desserts'].map(cat => (
 								<li key={cat}>
-									<Link
-										to={`/?category=${cat}`}
-										className={styles.colLink}
-									>
+									<Link to={`/?category=${cat}`} className={styles.colLink}>
 										{cat}
 									</Link>
 								</li>
@@ -45,26 +35,17 @@ export default function Footer() {
 						<p className={styles.colTitle}>Account</p>
 						<ul className={styles.colLinks}>
 							<li>
-								<Link
-									to="/login"
-									className={styles.colLink}
-								>
+								<Link to="/login" className={styles.colLink}>
 									Sign In
 								</Link>
 							</li>
 							<li>
-								<Link
-									to="/register"
-									className={styles.colLink}
-								>
+								<Link to="/register" className={styles.colLink}>
 									Register
 								</Link>
 							</li>
 							<li>
-								<Link
-									to="/profile"
-									className={styles.colLink}
-								>
+								<Link to="/profile" className={styles.colLink}>
 									My Orders
 								</Link>
 							</li>
@@ -78,11 +59,7 @@ export default function Footer() {
 					</p>
 					<p className={styles.madeWith}>
 						Built by{' '}
-						<a
-							href="https://github.com/AvetBadalyan"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
+						<a href="https://github.com/AvetBadalyan" target="_blank" rel="noopener noreferrer">
 							Avet Badalyan
 						</a>
 					</p>

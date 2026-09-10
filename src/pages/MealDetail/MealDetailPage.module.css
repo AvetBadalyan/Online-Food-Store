@@ -48,7 +48,7 @@
 	align-items: start;
 }
 
-/* ─── Image column ─────────────────────────────────────────── */
+/* ─── Image ────────────────────────────────────────────────── */
 .imageWrapper {
 	position: relative;
 	border-radius: var(--radius-xl);

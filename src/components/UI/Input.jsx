@@ -36,10 +36,7 @@ const Input = forwardRef(function Input(
 				)}
 			</div>
 			{error && (
-				<span
-					className={styles.errorMsg}
-					role="alert"
-				>
+				<span className={styles.errorMsg} role="alert">
 					<FiAlertCircle size={12} />
 					{error}
 				</span>

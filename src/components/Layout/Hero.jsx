@@ -9,10 +9,7 @@ export default function Hero({ onScrollToMenu }) {
 	const navigate = useNavigate()
 
 	return (
-		<section
-			className={styles.hero}
-			aria-label="Welcome banner"
-		>
+		<section className={styles.hero} aria-label="Welcome banner">
 			<img
 				src={HERO_IMAGE}
 				alt="Assorted delicious food spread"
@@ -39,23 +36,17 @@ export default function Hero({ onScrollToMenu }) {
 					</h1>
 
 					<p className={styles.heroSub}>
-						32+ hand-crafted dishes from around the world, made fresh and
-						delivered straight to your door.
+						32+ hand-crafted dishes from around the world, made fresh and delivered straight to your
+						door.
 					</p>
 
 					<div className={styles.heroActions}>
 						{/* Jumps to the menu filtered to Armenian dishes */}
-						<button
-							className={styles.heroBtn}
-							onClick={() => navigate('/?category=Armenian')}
-						>
+						<button className={styles.heroBtn} onClick={() => navigate('/?category=Armenian')}>
 							Order Now
 						</button>
 						{/* Scrolls down to the menu grid */}
-						<button
-							className={`${styles.heroBtn} ${styles.heroBtnGhost}`}
-							onClick={onScrollToMenu}
-						>
+						<button className={`${styles.heroBtn} ${styles.heroBtnGhost}`} onClick={onScrollToMenu}>
 							View Menu
 						</button>
 					</div>
@@ -73,10 +64,7 @@ export default function Hero({ onScrollToMenu }) {
 						{ num: '4.8★', label: 'Rating' },
 						{ num: '30min', label: 'Delivery' }
 					].map(({ num, label }) => (
-						<div
-							key={label}
-							className={styles.heroBadge}
-						>
+						<div key={label} className={styles.heroBadge}>
 							<span className={styles.heroBadgeNum}>{num}</span>
 							<span className={styles.heroBadgeLabel}>{label}</span>
 						</div>

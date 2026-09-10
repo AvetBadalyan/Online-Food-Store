@@ -6,7 +6,6 @@ import { useSearchParams } from 'react-router-dom'
 import Hero from '../../components/Layout/Hero'
 import MealCard from '../../components/MealCard/MealCard'
 import EmptyState from '../../components/UI/EmptyState'
-import { MealCardSkeleton } from '../../components/UI/Skeleton'
 import { CATEGORIES } from '../../data/meals'
 import { useMeals } from '../../hooks/useMeals'
 import styles from './HomePage.module.css'
@@ -20,7 +19,7 @@ const SORT_OPTIONS = [
 ]
 
 export default function HomePage() {
-	const { meals, loading } = useMeals()
+	const { meals } = useMeals()
 	const [searchParams, setSearchParams] = useSearchParams()
 
 	const [search, setSearch] = useState('')
@@ -86,10 +85,7 @@ export default function HomePage() {
 		<div className={styles.page}>
 			<Hero onScrollToMenu={scrollToMenu} />
 
-			<section
-				ref={menuRef}
-				aria-label="Meal menu"
-			>
+			<section ref={menuRef} aria-label="Meal menu">
 				<div className="container">
 					<div className={styles.controls}>
 						{/* Top row: title + search */}
@@ -123,19 +119,13 @@ export default function HomePage() {
 						</div>
 
 						{/* Category pills */}
-						<div
-							className={styles.categories}
-							role="tablist"
-							aria-label="Filter by category"
-						>
+						<div className={styles.categories} role="tablist" aria-label="Filter by category">
 							{CATEGORIES.map(cat => (
 								<button
 									key={cat}
 									role="tab"
 									aria-selected={cat === activeCategory}
-									className={`${styles.pill} ${
-										cat === activeCategory ? styles.pillActive : ''
-									}`}
+									className={`${styles.pill} ${cat === activeCategory ? styles.pillActive : ''}`}
 									onClick={() => setCategory(cat)}
 								>
 									{cat}
@@ -144,40 +134,29 @@ export default function HomePage() {
 						</div>
 
 						{/* Results meta + sort */}
-						{!loading && (
-							<div className={styles.meta}>
-								<span className={styles.resultCount}>
-									{filtered.length} {filtered.length === 1 ? 'dish' : 'dishes'}
-									{activeCategory !== 'All' && ` in ${activeCategory}`}
-									{search && ` matching "${search}"`}
-								</span>
-								<select
-									className={styles.sortSelect}
-									value={sortBy}
-									onChange={e => setSortBy(e.target.value)}
-									aria-label="Sort meals"
-								>
-									{SORT_OPTIONS.map(opt => (
-										<option
-											key={opt.value}
-											value={opt.value}
-										>
-											{opt.label}
-										</option>
-									))}
-								</select>
-							</div>
-						)}
+						<div className={styles.meta}>
+							<span className={styles.resultCount}>
+								{filtered.length} {filtered.length === 1 ? 'dish' : 'dishes'}
+								{activeCategory !== 'All' && ` in ${activeCategory}`}
+								{search && ` matching "${search}"`}
+							</span>
+							<select
+								className={styles.sortSelect}
+								value={sortBy}
+								onChange={e => setSortBy(e.target.value)}
+								aria-label="Sort meals"
+							>
+								{SORT_OPTIONS.map(opt => (
+									<option key={opt.value} value={opt.value}>
+										{opt.label}
+									</option>
+								))}
+							</select>
+						</div>
 					</div>
 
 					{/* Grid */}
-					{loading ? (
-						<div className={styles.grid}>
-							{Array.from({ length: 8 }).map((_, i) => (
-								<MealCardSkeleton key={i} />
-							))}
-						</div>
-					) : filtered.length === 0 ? (
+					{filtered.length === 0 ? (
 						<EmptyState
 							icon={<MdOutlineDinnerDining />}
 							title="No dishes found"
@@ -188,28 +167,21 @@ export default function HomePage() {
 							}
 							action={
 								<button
-									className={styles.pill}
+									className={styles.clearFiltersBtn}
 									onClick={() => {
 										setSearch('')
 										setCategory('All')
 									}}
-									style={{ marginTop: 'var(--space-2)' }}
 								>
 									Clear filters
 								</button>
 							}
 						/>
 					) : (
-						<motion.div
-							className={styles.grid}
-							layout
-						>
+						<motion.div className={styles.grid} layout>
 							<AnimatePresence mode="popLayout">
 								{filtered.map(meal => (
-									<MealCard
-										key={meal.id}
-										meal={meal}
-									/>
+									<MealCard key={meal.id} meal={meal} />
 								))}
 							</AnimatePresence>
 						</motion.div>

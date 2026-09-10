@@ -19,10 +19,7 @@ export default function Button({
 		.join(' ')
 
 	return (
-		<button
-			className={classes}
-			{...props}
-		>
+		<button className={classes} {...props}>
 			{children}
 		</button>
 	)

@@ -17,16 +17,12 @@ function getInitialState() {
 function cartReducer(state, action) {
 	switch (action.type) {
 		case 'ADD': {
-			const existingIndex = state.items.findIndex(
-				item => item.id === action.item.id
-			)
+			const existingIndex = state.items.findIndex(item => item.id === action.item.id)
 			let updatedItems
 
 			if (existingIndex >= 0) {
 				updatedItems = state.items.map((item, i) =>
-					i === existingIndex
-						? { ...item, amount: item.amount + action.item.amount }
-						: item
+					i === existingIndex ? { ...item, amount: item.amount + action.item.amount } : item
 				)
 			} else {
 				updatedItems = [...state.items, action.item]
@@ -34,10 +30,7 @@ function cartReducer(state, action) {
 
 			return {
 				items: updatedItems,
-				totalAmount: +(
-					state.totalAmount +
-					action.item.price * action.item.amount
-				).toFixed(2)
+				totalAmount: +(state.totalAmount + action.item.price * action.item.amount).toFixed(2)
 			}
 		}
 

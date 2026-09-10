@@ -3,12 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
-import {
-	FiArrowLeft,
-	FiArrowRight,
-	FiCheck,
-	FiCheckCircle
-} from 'react-icons/fi'
+import { FiArrowLeft, FiArrowRight, FiCheck, FiCheckCircle } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import Button from '../../components/UI/Button'
 import Input from '../../components/UI/Input'
@@ -16,10 +11,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
 import { postOrder } from '../../services/mealsService'
 import { formatPrice } from '../../utils/formatters'
-import {
-	DELIVERY_FEE,
-	FREE_DELIVERY_THRESHOLD
-} from '../../utils/orderConstants'
+import { DELIVERY_FEE, FREE_DELIVERY_THRESHOLD } from '../../utils/orderConstants'
 import { checkoutSchema } from '../../validators/checkoutSchema'
 import styles from './CheckoutPage.module.css'
 
@@ -48,31 +40,18 @@ const PAYMENT_METHODS = [
 // ─── Step indicator ───────────────────────────────────────────────────────────
 function StepBar({ current }) {
 	return (
-		<div
-			className={styles.steps}
-			role="list"
-			aria-label="Checkout steps"
-		>
+		<div className={styles.steps} role="list" aria-label="Checkout steps">
 			{STEPS.map((step, i) => {
 				const isDone = step.id < current
 				const isActive = step.id === current
 				return (
-					<div
-						key={step.id}
-						style={{
-							display: 'flex',
-							alignItems: 'center',
-							flex: i < STEPS.length - 1 ? 1 : 'none'
-						}}
-					>
+					<div key={step.id} className={styles.stepItem}>
 						<div
 							className={`${styles.step} ${isActive ? styles.stepActive : ''} ${isDone ? styles.stepDone : ''}`}
 							role="listitem"
 							aria-current={isActive ? 'step' : undefined}
 						>
-							<span className={styles.stepNum}>
-								{isDone ? <FiCheck size={13} /> : step.id}
-							</span>
+							<span className={styles.stepNum}>{isDone ? <FiCheck size={13} /> : step.id}</span>
 							<span className={styles.stepLabel}>{step.label}</span>
 						</div>
 						{i < STEPS.length - 1 && <div className={styles.stepConnector} />}
@@ -94,15 +73,10 @@ function OrderSummary({ items, totalAmount }) {
 
 			<ul className={styles.summaryItems}>
 				{items.map(item => (
-					<li
-						key={item.id}
-						className={styles.summaryItem}
-					>
+					<li key={item.id} className={styles.summaryItem}>
 						<span className={styles.summaryItemName}>{item.name}</span>
 						<span className={styles.summaryItemQty}>×{item.amount}</span>
-						<span className={styles.summaryItemPrice}>
-							{formatPrice(item.price * item.amount)}
-						</span>
+						<span className={styles.summaryItemPrice}>{formatPrice(item.price * item.amount)}</span>
 					</li>
 				))}
 			</ul>
@@ -114,15 +88,11 @@ function OrderSummary({ items, totalAmount }) {
 				</div>
 				<div className={styles.summaryLine}>
 					<span>Delivery</span>
-					<span>
-						{deliveryFee === 0 ? '🎉 Free' : formatPrice(deliveryFee)}
-					</span>
+					<span>{deliveryFee === 0 ? '🎉 Free' : formatPrice(deliveryFee)}</span>
 				</div>
 				<div className={styles.summaryTotal}>
 					<span className={styles.summaryTotalLabel}>Total</span>
-					<span className={styles.summaryTotalAmount}>
-						{formatPrice(grandTotal)}
-					</span>
+					<span className={styles.summaryTotalAmount}>{formatPrice(grandTotal)}</span>
 				</div>
 			</div>
 		</div>
@@ -168,10 +138,7 @@ export default function CheckoutPage() {
 			<div className="container">
 				<div className={styles.emptyCart}>
 					<p className={styles.emptyCartText}>Your cart is empty.</p>
-					<Link
-						to="/"
-						className={styles.emptyCartLink}
-					>
+					<Link to="/" className={styles.emptyCartLink}>
 						Browse our menu →
 					</Link>
 				</div>
@@ -246,24 +213,18 @@ export default function CheckoutPage() {
 					<span className={styles.successIcon}>🎉</span>
 					<h1 className={styles.successTitle}>Order Placed!</h1>
 					<p className={styles.successText}>
-						Thank you for your order. We're preparing your food and will have it
-						delivered to you shortly.
+						Thank you for your order. We're preparing your food and will have it delivered to you
+						shortly.
 					</p>
 					<p className={styles.successOrderId}>
 						Order ID: <strong>{orderId}</strong>
 					</p>
 					<div className={styles.successLinks}>
-						<Link
-							to="/"
-							className={styles.successLinkPrimary}
-						>
+						<Link to="/" className={styles.successLinkPrimary}>
 							Back to Menu
 						</Link>
 						{user && (
-							<Link
-								to="/profile"
-								className={styles.successLinkSecondary}
-							>
+							<Link to="/profile" className={styles.successLinkSecondary}>
 								View My Orders
 							</Link>
 						)}
@@ -283,10 +244,7 @@ export default function CheckoutPage() {
 				<div className={styles.inner}>
 					{/* ─── Left: Form ─────────────────────────────────── */}
 					<div>
-						<form
-							onSubmit={handleSubmit(onSubmit)}
-							noValidate
-						>
+						<form onSubmit={handleSubmit(onSubmit)} noValidate>
 							<AnimatePresence mode="wait">
 								{/* STEP 1 — Delivery details */}
 								{step === 1 && (
@@ -362,16 +320,10 @@ export default function CheckoutPage() {
 										</div>
 
 										<div className={styles.formActions}>
-											<Link
-												to="/"
-												className={styles.backLink}
-											>
+											<Link to="/" className={styles.backLink}>
 												<FiArrowLeft size={14} /> Back to Menu
 											</Link>
-											<Button
-												type="button"
-												onClick={goNext}
-											>
+											<Button type="button" onClick={goNext}>
 												Payment <FiArrowRight size={14} />
 											</Button>
 										</div>
@@ -405,27 +357,17 @@ export default function CheckoutPage() {
 														<span className={styles.paymentDesc}>{m.desc}</span>
 													</span>
 													{paymentMethod === m.id && (
-														<FiCheckCircle
-															size={20}
-															className={styles.paymentCheck}
-														/>
+														<FiCheckCircle size={20} className={styles.paymentCheck} />
 													)}
 												</button>
 											))}
 										</div>
 
 										<div className={styles.formActions}>
-											<button
-												type="button"
-												onClick={goBack}
-												className={styles.backLink}
-											>
+											<button type="button" onClick={goBack} className={styles.backLink}>
 												<FiArrowLeft size={14} /> Back
 											</button>
-											<Button
-												type="button"
-												onClick={goNext}
-											>
+											<Button type="button" onClick={goNext}>
 												Review Order <FiArrowRight size={14} />
 											</Button>
 										</div>
@@ -445,9 +387,7 @@ export default function CheckoutPage() {
 										<h2 className={styles.formTitle}>Review & Confirm</h2>
 
 										<div className={styles.reviewSection}>
-											<p className={styles.reviewSectionTitle}>
-												Delivery Address
-											</p>
+											<p className={styles.reviewSectionTitle}>Delivery Address</p>
 											<div className={styles.reviewGrid}>
 												{[
 													['Name', values.fullName],
@@ -458,14 +398,9 @@ export default function CheckoutPage() {
 													['Postal Code', values.postalCode],
 													['Country', values.country]
 												].map(([label, val]) => (
-													<div
-														key={label}
-														className={styles.reviewField}
-													>
+													<div key={label} className={styles.reviewField}>
 														<span className={styles.reviewLabel}>{label}</span>
-														<span className={styles.reviewValue}>
-															{val || '—'}
-														</span>
+														<span className={styles.reviewValue}>{val || '—'}</span>
 													</div>
 												))}
 											</div>
@@ -474,34 +409,22 @@ export default function CheckoutPage() {
 										<div className={styles.reviewSection}>
 											<p className={styles.reviewSectionTitle}>Payment</p>
 											<p className={styles.reviewValue}>
-												{
-													PAYMENT_METHODS.find(m => m.id === paymentMethod)
-														?.name
-												}
+												{PAYMENT_METHODS.find(m => m.id === paymentMethod)?.name}
 											</p>
 										</div>
 
 										{values.notes && (
 											<div className={styles.reviewSection}>
-												<p className={styles.reviewSectionTitle}>
-													Delivery Notes
-												</p>
+												<p className={styles.reviewSectionTitle}>Delivery Notes</p>
 												<p className={styles.reviewValue}>{values.notes}</p>
 											</div>
 										)}
 
 										<div className={styles.formActions}>
-											<button
-												type="button"
-												onClick={goBack}
-												className={styles.backLink}
-											>
+											<button type="button" onClick={goBack} className={styles.backLink}>
 												<FiArrowLeft size={14} /> Back
 											</button>
-											<Button
-												type="submit"
-												disabled={submitting}
-											>
+											<Button type="submit" disabled={submitting}>
 												{submitting ? 'Placing Order…' : 'Place Order'}{' '}
 												{!submitting && <FiCheck size={14} />}
 											</Button>
@@ -514,10 +437,7 @@ export default function CheckoutPage() {
 
 					{/* ─── Right: Summary sidebar ──────────────────────── */}
 					<div className={styles.sidebar}>
-						<OrderSummary
-							items={items}
-							totalAmount={totalAmount}
-						/>
+						<OrderSummary items={items} totalAmount={totalAmount} />
 					</div>
 				</div>
 			</div>

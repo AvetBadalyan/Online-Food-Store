@@ -25,41 +25,17 @@ import RegisterPage from './pages/Register/RegisterPage'
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route element={<Layout />}>
-			{/* Public routes */}
-			<Route
-				index
-				element={<HomePage />}
-			/>
-			<Route
-				path="meal/:id"
-				element={<MealDetailPage />}
-			/>
-			<Route
-				path="login"
-				element={<LoginPage />}
-			/>
-			<Route
-				path="register"
-				element={<RegisterPage />}
-			/>
+			<Route index element={<HomePage />} />
+			<Route path="meal/:id" element={<MealDetailPage />} />
+			<Route path="login" element={<LoginPage />} />
+			<Route path="register" element={<RegisterPage />} />
 
-			{/* Protected routes — requires authentication */}
 			<Route element={<PrivateRoute />}>
-				<Route
-					path="checkout"
-					element={<CheckoutPage />}
-				/>
-				<Route
-					path="profile"
-					element={<ProfilePage />}
-				/>
+				<Route path="checkout" element={<CheckoutPage />} />
+				<Route path="profile" element={<ProfilePage />} />
 			</Route>
 
-			{/* 404 fallback */}
-			<Route
-				path="*"
-				element={<NotFoundPage />}
-			/>
+			<Route path="*" element={<NotFoundPage />} />
 		</Route>
 	)
 )

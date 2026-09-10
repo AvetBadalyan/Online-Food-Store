@@ -34,20 +34,14 @@ export default function Layout() {
 			<Header onCartOpen={() => setCartOpen(true)} />
 
 			<main className={styles.main}>
-				<AnimatePresence
-					mode="wait"
-					initial={false}
-				>
+				<AnimatePresence mode="wait" initial={false}>
 					<Outlet key={location.pathname} />
 				</AnimatePresence>
 			</main>
 
 			<Footer />
 
-			<CartDrawer
-				isOpen={cartOpen}
-				onClose={() => setCartOpen(false)}
-			/>
+			<CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
 		</div>
 	)
 }

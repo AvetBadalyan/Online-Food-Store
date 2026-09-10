@@ -8,6 +8,9 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
 		"deploy": "npm run build && firebase deploy"
 	},
 	"dependencies": {
@@ -26,10 +29,12 @@
 		"@eslint/js": "^9.39.5",
 		"@vitejs/plugin-react": "^4.3.4",
 		"eslint": "^9.39.5",
+		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"eslint-plugin-react-refresh": "^0.4.26",
 		"globals": "^15.15.0",
+		"prettier": "3.5.3",
 		"vite": "^5.4.19"
 	}
 }

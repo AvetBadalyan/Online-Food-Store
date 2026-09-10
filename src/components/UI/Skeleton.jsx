@@ -23,10 +23,7 @@ export function SkeletonBlock({
 
 export function MealCardSkeleton() {
 	return (
-		<div
-			className={styles.card}
-			aria-hidden="true"
-		>
+		<div className={styles.card} aria-hidden="true">
 			<div className={styles.cardImage} />
 			<div className={styles.cardBody}>
 				<div className={styles.lineMedium} />

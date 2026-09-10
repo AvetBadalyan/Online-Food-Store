@@ -64,25 +64,19 @@ function OrderCard({ order }) {
 			<div className={styles.orderCardBody}>
 				<ul className={styles.orderItems}>
 					{items.map(item => (
-						<li
-							key={item.id ?? item.name}
-							className={styles.orderItem}
-						>
+						<li key={item.id ?? item.name} className={styles.orderItem}>
 							<span className={styles.orderItemName}>
 								{item.name}
 								<span className={styles.orderItemQty}>×{item.amount}</span>
 							</span>
-							<span className={styles.orderItemPrice}>
-								{formatPrice(item.price * item.amount)}
-							</span>
+							<span className={styles.orderItemPrice}>{formatPrice(item.price * item.amount)}</span>
 						</li>
 					))}
 				</ul>
 
 				{order.address && (
 					<p className={styles.orderAddress}>
-						📍 {order.address.street}, {order.address.city},{' '}
-						{order.address.country}
+						📍 {order.address.street}, {order.address.city}, {order.address.country}
 					</p>
 				)}
 
@@ -92,9 +86,7 @@ function OrderCard({ order }) {
 					</p>
 					<p className={styles.orderPayment}>
 						<FiCreditCard size={11} />
-						{order.paymentMethod === 'cash'
-							? 'Cash on delivery'
-							: 'Card on delivery'}
+						{order.paymentMethod === 'cash' ? 'Cash on delivery' : 'Card on delivery'}
 					</p>
 				</div>
 			</div>
@@ -153,9 +145,7 @@ export default function ProfilePage() {
 								</span>
 								<div>
 									<span className={styles.accountDetailLabel}>Name</span>
-									<span className={styles.accountDetailValue}>
-										{user?.displayName ?? '—'}
-									</span>
+									<span className={styles.accountDetailValue}>{user?.displayName ?? '—'}</span>
 								</div>
 							</li>
 							<li className={styles.accountDetail}>
@@ -164,9 +154,7 @@ export default function ProfilePage() {
 								</span>
 								<div>
 									<span className={styles.accountDetailLabel}>Email</span>
-									<span className={styles.accountDetailValue}>
-										{user?.email}
-									</span>
+									<span className={styles.accountDetailValue}>{user?.email}</span>
 								</div>
 							</li>
 							{joinedDate && (
@@ -175,12 +163,8 @@ export default function ProfilePage() {
 										<FiCalendar size={14} />
 									</span>
 									<div>
-										<span className={styles.accountDetailLabel}>
-											Member since
-										</span>
-										<span className={styles.accountDetailValue}>
-											{joinedDate}
-										</span>
+										<span className={styles.accountDetailLabel}>Member since</span>
+										<span className={styles.accountDetailValue}>{joinedDate}</span>
 									</div>
 								</li>
 							)}
@@ -189,20 +173,13 @@ export default function ProfilePage() {
 									<FiPackage size={14} />
 								</span>
 								<div>
-									<span className={styles.accountDetailLabel}>
-										Total orders
-									</span>
-									<span className={styles.accountDetailValue}>
-										{orders.length}
-									</span>
+									<span className={styles.accountDetailLabel}>Total orders</span>
+									<span className={styles.accountDetailValue}>{orders.length}</span>
 								</div>
 							</li>
 						</ul>
 
-						<button
-							className={styles.logoutBtn}
-							onClick={handleLogout}
-						>
+						<button className={styles.logoutBtn} onClick={handleLogout}>
 							<FiLogOut size={15} />
 							Log out
 						</button>
@@ -213,9 +190,7 @@ export default function ProfilePage() {
 						<h2 className={styles.sectionTitle}>
 							<FiPackage size={18} />
 							Order History
-							{orders.length > 0 && (
-								<span className={styles.orderCount}>{orders.length}</span>
-							)}
+							{orders.length > 0 && <span className={styles.orderCount}>{orders.length}</span>}
 						</h2>
 
 						{loading ? (
@@ -226,10 +201,7 @@ export default function ProfilePage() {
 								title="No orders yet"
 								description="Your order history will appear here after you place your first order."
 								action={
-									<Link
-										to="/"
-										className={styles.emptyOrdersLink}
-									>
+									<Link to="/" className={styles.emptyOrdersLink}>
 										Browse the menu →
 									</Link>
 								}
@@ -237,10 +209,7 @@ export default function ProfilePage() {
 						) : (
 							<div className={styles.orders}>
 								{orders.map(order => (
-									<OrderCard
-										key={order.id}
-										order={order}
-									/>
+									<OrderCard key={order.id} order={order} />
 								))}
 							</div>
 						)}

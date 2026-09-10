@@ -46,18 +46,11 @@ export default function Modal({ isOpen, onClose, title, children }) {
 					>
 						<div className={styles.header}>
 							{title && (
-								<h2
-									id="modal-title"
-									className={styles.title}
-								>
+								<h2 id="modal-title" className={styles.title}>
 									{title}
 								</h2>
 							)}
-							<button
-								className={styles.closeBtn}
-								onClick={onClose}
-								aria-label="Close modal"
-							>
+							<button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
 								<FiX size={20} />
 							</button>
 						</div>

@@ -142,8 +142,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 214,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80&fit=crop',
 		tags: ['bestseller', 'spicy']
 	},
 	{
@@ -156,8 +155,7 @@ export const MEALS = [
 		rating: 4.7,
 		numReviews: 178,
 		countInStock: 15,
-		image:
-			'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
@@ -170,8 +168,7 @@ export const MEALS = [
 		rating: 4.6,
 		numReviews: 132,
 		countInStock: 18,
-		image:
-			'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&q=80&fit=crop',
 		tags: ['spicy']
 	},
 	{
@@ -184,8 +181,7 @@ export const MEALS = [
 		rating: 4.5,
 		numReviews: 97,
 		countInStock: 12,
-		image:
-			'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80&fit=crop',
 		tags: []
 	},
 
@@ -200,8 +196,7 @@ export const MEALS = [
 		rating: 4.9,
 		numReviews: 305,
 		countInStock: 25,
-		image:
-			'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80&fit=crop',
 		tags: ['vegetarian', 'bestseller']
 	},
 	{
@@ -214,22 +209,19 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 267,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
 		id: 'm7',
 		name: 'BBQ Chicken Pizza',
-		description:
-			'Smoky BBQ base, grilled chicken, red onion, mozzarella, and fresh coriander.',
+		description: 'Smoky BBQ base, grilled chicken, red onion, mozzarella, and fresh coriander.',
 		price: 14.49,
 		category: 'Pizza',
 		rating: 4.7,
 		numReviews: 189,
 		countInStock: 18,
-		image:
-			'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80&fit=crop',
 		tags: []
 	},
 	{
@@ -242,8 +234,7 @@ export const MEALS = [
 		rating: 4.6,
 		numReviews: 143,
 		countInStock: 15,
-		image:
-			'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 
@@ -258,36 +249,31 @@ export const MEALS = [
 		rating: 4.9,
 		numReviews: 221,
 		countInStock: 30,
-		image:
-			'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
 		id: 'm10',
 		name: 'Spicy Tuna Roll (8 pcs)',
-		description:
-			'Tuna, cucumber, and avocado inside, topped with spicy mayo and togarashi.',
+		description: 'Tuna, cucumber, and avocado inside, topped with spicy mayo and togarashi.',
 		price: 14.99,
 		category: 'Sushi',
 		rating: 4.8,
 		numReviews: 198,
 		countInStock: 25,
-		image:
-			'https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=600&q=80&fit=crop',
 		tags: ['spicy']
 	},
 	{
 		id: 'm11',
 		name: 'Dragon Roll (8 pcs)',
-		description:
-			'Prawn tempura inside, topped with avocado, tobiko, and eel sauce.',
+		description: 'Prawn tempura inside, topped with avocado, tobiko, and eel sauce.',
 		price: 16.99,
 		category: 'Sushi',
 		rating: 4.9,
 		numReviews: 176,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
@@ -300,8 +286,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 154,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1553621042-f6e147245754?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?w=600&q=80&fit=crop',
 		tags: []
 	},
 
@@ -316,8 +301,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 189,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
@@ -330,22 +314,19 @@ export const MEALS = [
 		rating: 4.6,
 		numReviews: 134,
 		countInStock: 18,
-		image:
-			'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&fit=crop',
 		tags: ['vegan', 'spicy']
 	},
 	{
 		id: 'm15',
 		name: 'Truffle Mushroom Tagliatelle',
-		description:
-			'Egg tagliatelle, wild mushrooms, black truffle oil, parmesan, and thyme.',
+		description: 'Egg tagliatelle, wild mushrooms, black truffle oil, parmesan, and thyme.',
 		price: 16.99,
 		category: 'Pasta',
 		rating: 4.9,
 		numReviews: 112,
 		countInStock: 15,
-		image:
-			'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 
@@ -360,8 +341,7 @@ export const MEALS = [
 		rating: 4.7,
 		numReviews: 167,
 		countInStock: 25,
-		image:
-			'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 	{
@@ -374,8 +354,7 @@ export const MEALS = [
 		rating: 4.6,
 		numReviews: 143,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80&fit=crop',
 		tags: ['vegetarian', 'vegan']
 	},
 	{
@@ -388,8 +367,7 @@ export const MEALS = [
 		rating: 4.7,
 		numReviews: 98,
 		countInStock: 18,
-		image:
-			'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&fit=crop',
 		tags: []
 	},
 
@@ -404,22 +382,19 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 124,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 	{
 		id: 'm20',
 		name: 'Spicy Thai Pumpkin Soup',
-		description:
-			'Roasted pumpkin blended with coconut milk, lemongrass, galangal, and red chilli.',
+		description: 'Roasted pumpkin blended with coconut milk, lemongrass, galangal, and red chilli.',
 		price: 8.49,
 		category: 'Soups',
 		rating: 4.7,
 		numReviews: 89,
 		countInStock: 18,
-		image:
-			'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&q=80&fit=crop',
 		tags: ['vegan', 'spicy']
 	},
 	{
@@ -432,8 +407,7 @@ export const MEALS = [
 		rating: 4.9,
 		numReviews: 76,
 		countInStock: 10,
-		image:
-			'https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=600&q=80&fit=crop',
 		tags: []
 	},
 
@@ -448,8 +422,7 @@ export const MEALS = [
 		rating: 4.9,
 		numReviews: 287,
 		countInStock: 30,
-		image:
-			'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80&fit=crop',
 		tags: ['bestseller', 'vegetarian']
 	},
 	{
@@ -462,8 +435,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 211,
 		countInStock: 25,
-		image:
-			'https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=600&q=80&fit=crop',
 		tags: ['vegetarian', 'bestseller']
 	},
 	{
@@ -476,8 +448,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 178,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 	{
@@ -490,8 +461,7 @@ export const MEALS = [
 		rating: 4.7,
 		numReviews: 134,
 		countInStock: 15,
-		image:
-			'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 	{
@@ -504,8 +474,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 102,
 		countInStock: 20,
-		image:
-			'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 
@@ -520,8 +489,7 @@ export const MEALS = [
 		rating: 4.7,
 		numReviews: 198,
 		countInStock: 50,
-		image:
-			'https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=600&q=80&fit=crop',
 		tags: ['vegan', 'vegetarian']
 	},
 	{
@@ -534,8 +502,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 156,
 		countInStock: 40,
-		image:
-			'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&q=80&fit=crop',
 		tags: ['vegetarian']
 	},
 	{
@@ -548,8 +515,7 @@ export const MEALS = [
 		rating: 4.6,
 		numReviews: 134,
 		countInStock: 40,
-		image:
-			'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&fit=crop',
 		tags: ['vegan', 'vegetarian']
 	},
 	{
@@ -562,8 +528,7 @@ export const MEALS = [
 		rating: 4.7,
 		numReviews: 189,
 		countInStock: 35,
-		image:
-			'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
@@ -576,8 +541,7 @@ export const MEALS = [
 		rating: 4.8,
 		numReviews: 167,
 		countInStock: 30,
-		image:
-			'https://images.unsplash.com/photo-1607446045875-a54df24d5a63?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1607446045875-a54df24d5a63?w=600&q=80&fit=crop',
 		tags: ['bestseller']
 	},
 	{
@@ -590,8 +554,7 @@ export const MEALS = [
 		rating: 4.6,
 		numReviews: 98,
 		countInStock: 40,
-		image:
-			'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80&fit=crop',
+		image: 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80&fit=crop',
 		tags: ['vegan', 'vegetarian']
 	}
 ]

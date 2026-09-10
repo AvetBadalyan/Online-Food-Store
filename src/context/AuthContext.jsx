@@ -49,11 +49,7 @@ export function AuthProvider({ children }) {
 		dispatch({ type: 'SET_LOADING', loading: true })
 		dispatch({ type: 'CLEAR_ERROR' })
 		try {
-			const { user } = await createUserWithEmailAndPassword(
-				auth,
-				email,
-				password
-			)
+			const { user } = await createUserWithEmailAndPassword(auth, email, password)
 			await updateProfile(user, { displayName })
 			dispatch({ type: 'SET_USER', user: { ...user, displayName } })
 		} catch (err) {

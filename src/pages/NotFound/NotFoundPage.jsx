@@ -18,13 +18,9 @@ export default function NotFoundPage() {
 				<h1 className={styles.code}>404</h1>
 				<p className={styles.title}>Page not found</p>
 				<p className={styles.sub}>
-					Looks like this dish is off the menu. Head back and find something
-					delicious.
+					Looks like this dish is off the menu. Head back and find something delicious.
 				</p>
-				<Button
-					size="lg"
-					onClick={() => navigate('/')}
-				>
+				<Button size="lg" onClick={() => navigate('/')}>
 					Back to Menu
 				</Button>
 			</motion.div>

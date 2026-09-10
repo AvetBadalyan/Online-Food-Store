@@ -22,11 +22,7 @@ export default function QuantityStepper({
 }) {
 	const iconSize = size === 'md' ? 14 : 12
 
-	const controls = [
-		styles.controls,
-		styles[variant],
-		styles[size]
-	].join(' ')
+	const controls = [styles.controls, styles[variant], styles[size]].join(' ')
 
 	return (
 		<div className={controls}>

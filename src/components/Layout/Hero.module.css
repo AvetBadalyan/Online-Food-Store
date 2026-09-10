@@ -25,11 +25,7 @@
 .heroOverlay {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		135deg,
-		rgba(15, 13, 11, 0.75) 0%,
-		rgba(15, 13, 11, 0.2) 100%
-	);
+	background: linear-gradient(135deg, rgba(15, 13, 11, 0.75) 0%, rgba(15, 13, 11, 0.2) 100%);
 }
 
 /* Content sits in normal flow — no absolute positioning that causes overlap */

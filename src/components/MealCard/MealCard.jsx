@@ -52,10 +52,7 @@ export default function MealCard({ meal }) {
 				{meal.tags?.length > 0 && (
 					<div className={styles.tags}>
 						{meal.tags.map(tag => (
-							<Tag
-								key={tag}
-								type={tag}
-							/>
+							<Tag key={tag} type={tag} />
 						))}
 					</div>
 				)}
@@ -73,10 +70,7 @@ export default function MealCard({ meal }) {
 				<h3 className={styles.name}>{meal.name}</h3>
 				<p className={styles.description}>{meal.description}</p>
 				<div className={styles.ratingRow}>
-					<Rating
-						value={meal.rating}
-						numReviews={meal.numReviews}
-					/>
+					<Rating value={meal.rating} numReviews={meal.numReviews} />
 				</div>
 			</div>
 
