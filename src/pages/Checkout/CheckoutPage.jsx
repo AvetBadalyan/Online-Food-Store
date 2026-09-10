@@ -4,8 +4,10 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { FiArrowLeft, FiArrowRight, FiCheck, FiCheckCircle } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
+import { MdOutlineDinnerDining } from 'react-icons/md'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/UI/Button'
+import EmptyState from '../../components/UI/EmptyState'
 import Input from '../../components/UI/Input'
 import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
@@ -132,16 +134,18 @@ export default function CheckoutPage() {
 		}
 	})
 
+	const navigate = useNavigate()
+
 	// Redirect if cart is empty and no orderId
 	if (items.length === 0 && !orderId) {
 		return (
 			<div className="container">
-				<div className={styles.emptyCart}>
-					<p className={styles.emptyCartText}>Your cart is empty.</p>
-					<Link to="/" className={styles.emptyCartLink}>
-						Browse our menu →
-					</Link>
-				</div>
+				<EmptyState
+					icon={<MdOutlineDinnerDining />}
+					title="Your cart is empty"
+					description="Add some dishes from our menu before checking out."
+					action={<Button onClick={() => navigate('/')}>Browse the Menu</Button>}
+				/>
 			</div>
 		)
 	}

@@ -2,31 +2,6 @@
 	padding: var(--space-10) 0 var(--space-16);
 }
 
-/* ─── Empty cart state ─────────────────────────────────────── */
-.emptyCart {
-	padding: var(--space-20) var(--space-8);
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: var(--space-4);
-}
-
-.emptyCartText {
-	color: var(--color-text-muted);
-}
-
-.emptyCartLink {
-	color: var(--color-primary);
-	font-size: var(--text-sm);
-	font-weight: var(--font-medium);
-	transition: opacity var(--transition-fast);
-}
-
-.emptyCartLink:hover {
-	opacity: 0.8;
-}
-
 .inner {
 	display: grid;
 	grid-template-columns: 1fr 380px;
@@ -176,7 +151,7 @@
 
 .paymentOptionSelected {
 	border-color: var(--color-primary);
-	background: rgba(232, 82, 26, 0.06);
+	background: var(--color-payment-selected-tint);
 }
 
 .paymentIcon {

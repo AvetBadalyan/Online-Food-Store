@@ -62,7 +62,7 @@
 .searchInput:focus {
 	outline: none;
 	border-color: var(--color-primary);
-	box-shadow: 0 0 0 3px rgba(232, 82, 26, 0.15);
+	box-shadow: var(--focus-ring);
 }
 
 .clearBtn {
@@ -116,7 +116,7 @@
 .pillActive {
 	color: var(--color-primary);
 	border-color: var(--color-primary);
-	background: rgba(232, 82, 26, 0.08);
+	background: var(--color-primary-tint);
 }
 
 /* Used in EmptyState action — pill style with top spacing */

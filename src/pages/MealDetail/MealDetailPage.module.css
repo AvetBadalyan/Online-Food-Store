@@ -121,12 +121,12 @@
 }
 
 .inStock {
-	background: rgba(61, 187, 110, 0.12);
+	background: var(--color-success-tint);
 	color: var(--color-success);
 }
 
 .outOfStock {
-	background: rgba(232, 82, 82, 0.12);
+	background: var(--color-error-tint-strong);
 	color: var(--color-error);
 }
 

@@ -81,8 +81,8 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 20px;
-	height: 20px;
+	min-width: var(--badge-size);
+	height: var(--badge-size);
 	padding: 0 var(--space-1);
 	background: #fff;
 	color: var(--color-primary);
@@ -179,7 +179,7 @@
 	color: var(--color-error);
 }
 .dropdownLogout:hover {
-	background: rgba(232, 82, 82, 0.08);
+	background: var(--color-error-tint-medium);
 	color: var(--color-error);
 }
 
@@ -238,7 +238,7 @@
 }
 .navLinkLogout:hover {
 	color: var(--color-error);
-	background: rgba(232, 82, 82, 0.08);
+	background: var(--color-error-tint-medium);
 }
 
 /* ─── Responsive ───────────────────────────────────────────── */

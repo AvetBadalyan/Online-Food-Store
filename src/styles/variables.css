@@ -19,9 +19,9 @@
 	--color-bg-input: #1e1a15;
 
 	/* Text */
-	--color-text: #f0ebe3; /* warm white    */
-	--color-text-muted: #a09380;
-	--color-text-subtle: #6b5d50;
+	--color-text: #f0ebe3; /* warm white — contrast 14:1 on bg  */
+	--color-text-muted: #a09380; /* contrast ~5.5:1 on bg             */
+	--color-text-subtle: #857060; /* contrast ~3.8:1 on bg — AA large  */
 
 	/* Borders */
 	--color-border: #2e2620;
@@ -32,15 +32,33 @@
 	--color-error: #e85252;
 	--color-warning: #f5a623;
 
-	/* Tags */
-	--color-tag-bestseller-bg: rgba(245, 200, 66, 0.15);
-	--color-tag-bestseller-text: #f5c842;
-	--color-tag-spicy-bg: rgba(232, 82, 26, 0.15);
-	--color-tag-spicy-text: var(--color-primary-light);
-	--color-tag-vegan-bg: rgba(61, 187, 110, 0.15);
-	--color-tag-vegan-text: #3dbb6e;
-	--color-tag-vegetarian-bg: rgba(61, 187, 110, 0.1);
-	--color-tag-vegetarian-text: #5dcf8a;
+	/* ── Tint tokens ──────────────────────────────────────────────────────────
+	   Use these instead of hardcoding rgba() in components.
+	   Suffix convention:  -tint = subtle fill  |  -border = subtle stroke
+	   ──────────────────────────────────────────────────────────────────────── */
+
+	/* Primary tints */
+	--color-primary-tint: rgba(232, 82, 26, 0.08); /* pill active bg, selected bg  */
+	--color-primary-tint-medium: rgba(232, 82, 26, 0.1); /* icon bg, account detail icon */
+	--color-primary-tint-strong: rgba(232, 82, 26, 0.4); /* card hover glow              */
+
+	/* Error tints */
+	--color-error-tint: rgba(232, 82, 82, 0.06); /* clear-btn hover, drawer hover */
+	--color-error-tint-medium: rgba(232, 82, 82, 0.08); /* logout btn hover              */
+	--color-error-tint-strong: rgba(232, 82, 82, 0.1); /* error banner bg               */
+	--color-error-border: rgba(232, 82, 82, 0.25); /* logout btn border             */
+	--color-error-border-hover: rgba(232, 82, 82, 0.5); /* logout btn border hover       */
+
+	/* Success / warning tints */
+	--color-success-tint: rgba(61, 187, 110, 0.12);
+	--color-warning-tint: rgba(245, 166, 35, 0.12);
+
+	/* Payment option selected */
+	--color-payment-selected-tint: rgba(232, 82, 26, 0.06);
+
+	/* Focus ring — used on inputs and interactive elements */
+	--focus-ring: 0 0 0 3px rgba(232, 82, 26, 0.15);
+	--focus-ring-error: 0 0 0 3px rgba(232, 82, 82, 0.15);
 
 	/* Spacing scale */
 	--space-1: 0.25rem; /*  4px */
@@ -100,6 +118,9 @@
 	--max-width: 1280px;
 	--header-height: 70px;
 	--drawer-width: 420px;
+
+	/* Badge size — used consistently across Header, CartDrawer, Profile */
+	--badge-size: 22px;
 
 	/* Z-index scale */
 	--z-base: 1;

@@ -56,8 +56,8 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 24px;
-	height: 24px;
+	min-width: var(--badge-size);
+	height: var(--badge-size);
 	padding: 0 var(--space-2);
 	background: var(--color-primary);
 	color: #fff;
@@ -123,12 +123,12 @@
 }
 
 .statusDelivered {
-	background: rgba(61, 187, 110, 0.12);
+	background: var(--color-success-tint);
 	color: var(--color-success);
 }
 
 .statusPending {
-	background: rgba(245, 166, 35, 0.12);
+	background: var(--color-warning-tint);
 	color: var(--color-warning);
 }
 
@@ -243,7 +243,7 @@
 	width: 28px;
 	height: 28px;
 	border-radius: var(--radius-sm);
-	background: rgba(232, 82, 26, 0.1);
+	background: var(--color-primary-tint-medium);
 	color: var(--color-primary);
 	display: flex;
 	align-items: center;
@@ -278,14 +278,14 @@
 	font-size: var(--text-sm);
 	font-weight: var(--font-semi);
 	color: var(--color-error);
-	border: 1.5px solid rgba(232, 82, 82, 0.25);
+	border: 1.5px solid var(--color-error-border);
 	transition:
 		background var(--transition-base),
 		border-color var(--transition-base);
 }
 .logoutBtn:hover {
-	background: rgba(232, 82, 82, 0.08);
-	border-color: rgba(232, 82, 82, 0.5);
+	background: var(--color-error-tint-medium);
+	border-color: var(--color-error-border-hover);
 }
 
 .ordersSection {

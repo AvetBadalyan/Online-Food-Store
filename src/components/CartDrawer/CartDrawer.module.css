@@ -45,8 +45,8 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 22px;
-	height: 22px;
+	min-width: var(--badge-size);
+	height: var(--badge-size);
 	padding: 0 var(--space-1);
 	background: var(--color-primary);
 	color: #fff;
@@ -227,5 +227,5 @@
 }
 .clearBtn:hover {
 	color: var(--color-error);
-	background: rgba(232, 82, 82, 0.06);
+	background: var(--color-error-tint);
 }

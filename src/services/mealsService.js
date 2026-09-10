@@ -1,13 +1,9 @@
 import { get, push, ref } from 'firebase/database'
-import { MEALS, MEALS_MAP } from '../data/meals'
+import { MEALS_MAP } from '../data/meals'
 import { db } from './firebase'
 
 // Meals are static local data — no DB needed, no network latency, no stale data.
 // Firebase is used only for orders and auth.
-
-export async function fetchMeals() {
-	return MEALS
-}
 
 export async function fetchMealById(id) {
 	return MEALS_MAP[id] ?? null
