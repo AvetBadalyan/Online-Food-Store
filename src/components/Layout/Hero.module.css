@@ -25,6 +25,7 @@
 .heroOverlay {
 	position: absolute;
 	inset: 0;
+	/* gradient uses --color-bg's actual value since CSS can't use vars inside rgba() */
 	background: linear-gradient(135deg, rgba(15, 13, 11, 0.75) 0%, rgba(15, 13, 11, 0.2) 100%);
 }
 
@@ -72,7 +73,7 @@
 
 .heroSub {
 	font-size: var(--text-base);
-	color: rgba(240, 235, 227, 0.8);
+	color: var(--color-text-dimmed);
 	line-height: var(--leading-relaxed);
 	margin-bottom: var(--space-6);
 	max-width: 460px;

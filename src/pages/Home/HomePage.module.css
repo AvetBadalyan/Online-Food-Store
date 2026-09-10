@@ -119,27 +119,9 @@
 	background: var(--color-primary-tint);
 }
 
-/* Used in EmptyState action — pill style with top spacing */
+/* Used in EmptyState action — reuses .pill with added top margin */
 .clearFiltersBtn {
-	flex-shrink: 0;
-	padding: var(--space-2) var(--space-4);
-	border-radius: var(--radius-full);
-	font-size: var(--text-sm);
-	font-weight: var(--font-medium);
-	color: var(--color-text-muted);
-	border: 1.5px solid var(--color-border);
-	background: transparent;
 	margin-top: var(--space-2);
-	transition:
-		color var(--transition-fast),
-		border-color var(--transition-fast),
-		background var(--transition-fast);
-	white-space: nowrap;
-}
-.clearFiltersBtn:hover {
-	color: var(--color-text);
-	border-color: var(--color-text-subtle);
-	background: var(--color-bg-card);
 }
 
 /* ─── Results meta ─────────────────────────────────────────── */

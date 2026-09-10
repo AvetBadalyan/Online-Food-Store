@@ -24,17 +24,7 @@
 	border-color: var(--color-text-subtle);
 }
 
-/* ─── Skeleton / error states ──────────────────────────────── */
-.skeletonBackBtn {
-	margin-bottom: var(--space-8);
-}
-
-.skeletonInfoCol {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-4);
-}
-
+/* ─── Error state ──────────────────────────────────────────── */
 .errorMsg {
 	color: var(--color-error);
 	margin-bottom: var(--space-4);
@@ -171,7 +161,7 @@
 }
 
 /* ─── Responsive ───────────────────────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 	.layout {
 		grid-template-columns: 1fr;
 		gap: var(--space-8);

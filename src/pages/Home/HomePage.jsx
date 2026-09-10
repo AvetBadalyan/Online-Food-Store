@@ -187,7 +187,7 @@ export default function HomePage() {
 							}
 							action={
 								<button
-									className={styles.clearFiltersBtn}
+									className={`${styles.pill} ${styles.clearFiltersBtn}`}
 									onClick={() => {
 										setSearch('')
 										setCategory('All')

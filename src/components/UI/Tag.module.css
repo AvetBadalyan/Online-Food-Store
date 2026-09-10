@@ -16,25 +16,25 @@
 }
 
 .bestseller {
-	background: rgba(245, 200, 66, 0.92);
+	background: var(--color-tag-bestseller);
 	color: #1a1200;
-	border-color: rgba(245, 200, 66, 0.4);
+	border-color: var(--color-tag-bestseller-border);
 }
 
 .spicy {
-	background: rgba(232, 82, 26, 0.92);
+	background: var(--color-tag-spicy);
 	color: #fff;
-	border-color: rgba(232, 82, 26, 0.4);
+	border-color: var(--color-tag-spicy-border);
 }
 
 .vegan {
-	background: rgba(61, 187, 110, 0.92);
+	background: var(--color-tag-vegan);
 	color: #001a08;
-	border-color: rgba(61, 187, 110, 0.4);
+	border-color: var(--color-tag-vegan-border);
 }
 
 .vegetarian {
-	background: rgba(61, 187, 110, 0.75);
+	background: var(--color-tag-vegetarian);
 	color: #001a08;
-	border-color: rgba(61, 187, 110, 0.3);
+	border-color: var(--color-tag-vegetarian-border);
 }

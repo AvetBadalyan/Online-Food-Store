@@ -21,7 +21,7 @@
 	/* Text */
 	--color-text: #f0ebe3; /* warm white — contrast 14:1 on bg  */
 	--color-text-muted: #a09380; /* contrast ~5.5:1 on bg             */
-	--color-text-subtle: #857060; /* contrast ~3.8:1 on bg — AA large  */
+	--color-text-subtle: #9e8a78; /* contrast ~5.9:1 on bg — AA all sizes */
 
 	/* Borders */
 	--color-border: #2e2620;
@@ -36,6 +36,22 @@
 	   Use these instead of hardcoding rgba() in components.
 	   Suffix convention:  -tint = subtle fill  |  -border = subtle stroke
 	   ──────────────────────────────────────────────────────────────────────── */
+
+	/* Overlay / frosted glass */
+	--color-overlay: rgba(0, 0, 0, 0.6); /* backdrop behind drawers/modals */
+	--color-overlay-dark: rgba(15, 13, 11, 0.7); /* out-of-stock image dimmer      */
+	--color-bg-frosted: rgba(15, 13, 11, 0.85); /* sticky header frosted glass    */
+	--color-text-dimmed: rgba(240, 235, 227, 0.8); /* hero subtitle on dark overlay  */
+
+	/* Tag backgrounds — solid-ish fills over images */
+	--color-tag-bestseller: rgba(245, 200, 66, 0.92);
+	--color-tag-bestseller-border: rgba(245, 200, 66, 0.4);
+	--color-tag-spicy: rgba(232, 82, 26, 0.92);
+	--color-tag-spicy-border: rgba(232, 82, 26, 0.4);
+	--color-tag-vegan: rgba(61, 187, 110, 0.92);
+	--color-tag-vegan-border: rgba(61, 187, 110, 0.4);
+	--color-tag-vegetarian: rgba(61, 187, 110, 0.75);
+	--color-tag-vegetarian-border: rgba(61, 187, 110, 0.3);
 
 	/* Primary tints */
 	--color-primary-tint: rgba(232, 82, 26, 0.08); /* pill active bg, selected bg  */
