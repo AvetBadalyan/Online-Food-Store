@@ -2,10 +2,11 @@ import { equalTo, get, orderByChild, push, query, ref } from 'firebase/database'
 import { db } from './firebase'
 
 export async function postOrder(orderData) {
-	await push(ref(db, 'orders'), {
+	const newRef = await push(ref(db, 'orders'), {
 		...orderData,
 		createdAt: new Date().toISOString()
 	})
+	return newRef.key
 }
 
 export async function fetchOrdersByUser(uid) {

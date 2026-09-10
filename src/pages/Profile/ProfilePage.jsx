@@ -42,7 +42,7 @@ function OrderCard({ order }) {
 			<div className={styles.orderCardHeader}>
 				<div>
 					<p className={styles.orderId}>
-						Order <span>#{order.orderId ?? order.id}</span>
+						Order <span>#{order.id}</span>
 					</p>
 					<p className={styles.orderDate}>{formatDate(order.createdAt)}</p>
 				</div>

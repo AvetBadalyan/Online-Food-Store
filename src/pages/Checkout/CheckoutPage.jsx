@@ -176,9 +176,7 @@ export default function CheckoutPage() {
 	async function onSubmit(data) {
 		setSubmitting(true)
 		try {
-			const id = `ORD-${Date.now()}`
-			await postOrder({
-				orderId: id,
+			const id = await postOrder({
 				uid: user?.uid ?? 'guest',
 				user: { name: data.fullName, email: data.email, phone: data.phone },
 				address: {
