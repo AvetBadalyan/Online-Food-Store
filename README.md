@@ -1,157 +1,159 @@
 # Avet's Food Store
 
-A modern, responsive food ordering web application built with React 19 and
-Firebase. Features a curated menu with authentic Armenian dishes alongside
-international cuisine.
+A modern, responsive food ordering web application built with React 19 and Firebase. Features a curated menu of 32 dishes spanning 10 categories, including authentic Armenian cuisine alongside international favourites.
 
-**Live Demo:**
-[https://online-foodstore.web.app](https://online-foodstore.web.app)
+**Live Demo:** [https://online-foodstore.web.app](https://online-foodstore.web.app)
+
+---
 
 ## Features
 
-- **40+ Dishes** across 10 categories including Armenian, Burgers, Pizza, Sushi,
-  Pasta, Salads, Soups, Desserts, and Drinks
-- **Real-time Cart** with localStorage persistence
-- **User Authentication** via Firebase (sign up, login, logout)
-- **Order Management** with Firebase Realtime Database
-- **Responsive Design** optimized for desktop, tablet, and mobile
-- **Search & Filter** by category, name, or description
-- **Sorting Options** by price, rating, or name
-- **Smooth Animations** powered by Framer Motion
+- **32 Dishes** across 10 categories: Armenian, Burgers, Pizza, Sushi, Pasta, Salads, Soups, Desserts, Drinks
+- **Search, Filter & Sort** by category, name, description, price, or rating
+- **Real-time Cart** with localStorage persistence and free-delivery threshold indicator
+- **User Authentication** via Firebase (register, login, logout)
+- **3-Step Checkout** with form validation — delivery details, payment method, order review
+- **Order History** stored in Firebase Realtime Database, visible on the Profile page
+- **Protected Routes** — checkout and profile require authentication; users are redirected back after login
+- **Smooth Animations** powered by Framer Motion throughout
+- **Fully Responsive** — optimised for desktop, tablet, and mobile
+
+---
 
 ## Tech Stack
 
-- **Frontend:** React 19, React Router v7, CSS Modules
-- **State Management:** React Context + useReducer
-- **Forms:** React Hook Form + Zod validation
-- **Animations:** Framer Motion
-- **Backend:** Firebase Authentication & Realtime Database
-- **Build Tool:** Vite
-- **Hosting:** Firebase Hosting
+| Concern | Choice |
+|---------|--------|
+| UI | React 19, CSS Modules |
+| Routing | React Router v7 |
+| State | React Context + useReducer |
+| Forms | React Hook Form + Zod |
+| Animations | Framer Motion |
+| Auth & DB | Firebase Authentication + Realtime Database |
+| Build | Vite |
+| Hosting | Firebase Hosting |
+| Linting | ESLint (react, react-hooks, react-refresh) |
+| Formatting | Prettier |
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
-- Firebase project (for auth and database)
+- A Firebase project with Authentication and Realtime Database enabled
 
 ### Installation
 
-1. Clone the repository:
+```bash
+git clone https://github.com/AvetBadalyan/Online-Food-Store.git
+cd Online-Food-Store
+npm install
+```
 
-   ```bash
-   git clone https://github.com/AvetBadalyan/Online-Food-Store.git
-   cd Online-Food-Store
-   ```
+### Environment setup
 
-2. Install dependencies:
+```bash
+cp .env.example .env
+```
 
-   ```bash
-   npm install
-   ```
+Fill in your Firebase config in `.env`:
 
-3. Create a `.env` file based on `.env.example`:
+```
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_DATABASE_URL=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
 
-   ```bash
-   cp .env.example .env
-   ```
+### Run
 
-4. Add your Firebase configuration to `.env`:
+```bash
+npm run dev        # http://localhost:5173
+```
 
-   ```
-   VITE_FIREBASE_API_KEY=your_api_key
-   VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-   VITE_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
-   VITE_FIREBASE_PROJECT_ID=your_project_id
-   VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-   VITE_FIREBASE_APP_ID=your_app_id
-   ```
+---
 
-5. Start the development server:
+## Scripts
 
-   ```bash
-   npm run dev
-   ```
-
-6. Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## Available Scripts
-
-| Command           | Description                      |
-| ----------------- | -------------------------------- |
-| `npm run dev`     | Start development server         |
-| `npm run build`   | Build for production             |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
 | `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format all files with Prettier |
+| `npm run format:check` | Check formatting without writing |
+| `npm run deploy` | Build + deploy to Firebase Hosting |
+
+---
 
 ## Project Structure
 
 ```
 src/
-├── components/       # Reusable UI components
-│   ├── CartDrawer/   # Slide-out cart panel
-│   ├── Layout/       # Header, Footer, Hero, Layout
-│   ├── MealCard/     # Individual meal display
-│   └── UI/           # Button, Input, Loader, Modal, etc.
-├── context/          # React Context providers
-│   ├── AuthContext   # Firebase authentication state
-│   └── CartContext   # Shopping cart state
-├── data/             # Static meal data
-├── hooks/            # Custom React hooks
-├── pages/            # Route components
-├── services/         # Firebase configuration & API
-├── styles/           # Global CSS variables
-├── utils/            # Helper functions
-└── validators/       # Zod validation schemas
+├── components/
+│   ├── CartDrawer/     # Animated slide-out cart panel
+│   ├── Layout/         # Header, Footer, Hero, Layout wrapper
+│   ├── MealCard/       # Individual meal card with add-to-cart
+│   └── UI/             # Button, Input, Tag, Rating, QuantityStepper,
+│                       # Loader, Skeleton, EmptyState
+├── context/
+│   ├── AuthContext     # Firebase auth state + reducer
+│   └── CartContext     # Cart state + reducer, localStorage sync
+├── data/
+│   └── meals.js        # Static meal data (32 dishes + MEALS_MAP)
+├── hooks/
+│   ├── useMealDetail   # Fetch single meal by id
+│   ├── useMeals        # Return all meals
+│   └── useOrders       # Fetch orders for authenticated user
+├── pages/
+│   ├── Home            # Menu grid with search/filter/sort
+│   ├── MealDetail      # Full meal page with quantity stepper
+│   ├── Checkout        # 3-step checkout form
+│   ├── Login           # Firebase email/password login
+│   ├── Register        # New account registration
+│   ├── Profile         # Account info + order history
+│   └── NotFound        # 404 page
+├── services/
+│   ├── firebase.js     # Firebase app init, auth, db exports
+│   └── mealsService.js # fetchMealById, postOrder, fetchOrdersByUser
+├── styles/
+│   └── variables.css   # Design tokens (colors, spacing, typography,
+│                       # radius, shadows, transitions, z-index)
+├── utils/
+│   ├── formatters.js   # formatPrice, formatDate
+│   ├── imageUtils.js   # handleImageError fallback
+│   └── orderConstants.js # FREE_DELIVERY_THRESHOLD, DELIVERY_FEE
+└── validators/
+    ├── authSchemas.js  # Zod login + register schemas
+    └── checkoutSchema.js # Zod checkout form schema
 ```
 
-## Key Features Explained
+---
 
-### Armenian Cuisine
+## Design System
 
-The app features 8 authentic Armenian dishes with images sourced from Wikimedia
-Commons:
+All visual values are defined as CSS custom properties in `src/styles/variables.css` and consumed via CSS Modules throughout the app. No hardcoded colours or spacing values exist in component files.
 
-- Khorovats (BBQ)
-- Tolma (Dolma)
-- Lahmajun
-- Khash
-- Harissa
-- Ghapama
-- Jingalov Hats
-- Spas
+Key tokens: `--color-primary`, `--color-text`, `--color-bg`, `--space-*`, `--text-*`, `--radius-*`, `--shadow-*`, `--focus-ring`, `--badge-size`, tint/transparency tokens for status colours.
 
-### Cart Persistence
-
-Cart data is automatically saved to localStorage, so users don't lose their
-selections when refreshing the page.
-
-### Protected Routes
-
-Checkout and Profile pages require authentication. Users are redirected to login
-and returned to their intended destination after signing in.
-
-### Order History
-
-Authenticated users can view their complete order history on the Profile page.
+---
 
 ## Deployment
 
-The app is configured for Firebase Hosting:
-
 ```bash
-npm run build
-firebase deploy
+npm run deploy
 ```
 
-## License
+This runs `npm run build` then `firebase deploy` using the config in `firebase.json`.
 
-This project is open source and available under the [MIT License](LICENSE).
+---
 
 ## Author
 
-**Avet Badalyan**
-
-- GitHub: [@AvetBadalyan](https://github.com/AvetBadalyan)
+**Avet Badalyan** — [GitHub](https://github.com/AvetBadalyan)
