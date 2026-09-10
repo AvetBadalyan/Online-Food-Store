@@ -40,7 +40,10 @@ export default [
 			'react/prop-types': 'off',
 			// Apostrophes/quotes in JSX text render fine; not worth escaping
 			'react/no-unescaped-entities': 'off',
-			'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+			'react-refresh/only-export-components': [
+				'warn',
+				{ allowConstantExport: true, allowExportNames: ['useAuth', 'useCart'] }
+			],
 			// Catch undefined identifiers and dead imports
 			'no-undef': 'error',
 			'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }]
