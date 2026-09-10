@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from 'react'
+import { MEALS_MAP } from '../data/meals'
 
 // ─── Initial State ────────────────────────────────────────────────────────────
 const STORAGE_KEY = 'foodstore_cart'
@@ -6,7 +7,17 @@ const STORAGE_KEY = 'foodstore_cart'
 function getInitialState() {
 	try {
 		const stored = localStorage.getItem(STORAGE_KEY)
-		if (stored) return JSON.parse(stored)
+		if (stored) {
+			const parsed = JSON.parse(stored)
+			// Migrate: ensure all cart items have their image from current MEALS data
+			const migratedItems = parsed.items.map(item => {
+				if (!item.image && MEALS_MAP[item.id]) {
+					return { ...item, image: MEALS_MAP[item.id].image }
+				}
+				return item
+			})
+			return { ...parsed, items: migratedItems }
+		}
 	} catch {
 		// ignore malformed storage
 	}

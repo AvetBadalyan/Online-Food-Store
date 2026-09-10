@@ -1,5 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { FiSearch, FiX } from 'react-icons/fi'
 import { MdOutlineDinnerDining } from 'react-icons/md'
 import { useSearchParams } from 'react-router-dom'
@@ -18,13 +17,15 @@ const SORT_OPTIONS = [
 	{ value: 'name-asc', label: 'A → Z' }
 ]
 
+const PAGE_SIZE = 8
+
 export default function HomePage() {
 	const { meals } = useMeals()
 	const [searchParams, setSearchParams] = useSearchParams()
 
 	const [search, setSearch] = useState('')
 	const [sortBy, setSortBy] = useState('default')
-	const menuRef = useRef(null)
+	const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
 	// Category from URL param (Footer links use ?category=X)
 	const urlCategory = searchParams.get('category') ?? 'All'
@@ -37,10 +38,7 @@ export default function HomePage() {
 			searchParams.set('category', cat)
 		}
 		setSearchParams(searchParams, { replace: true })
-	}
-
-	function scrollToMenu() {
-		menuRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+		setVisibleCount(PAGE_SIZE) // reset on category change
 	}
 
 	// Filter + sort — all in-memory, no network call
@@ -81,11 +79,30 @@ export default function HomePage() {
 		return result
 	}, [meals, activeCategory, search, sortBy])
 
+	// Reset visible count when search or sort changes
+	const visibleMeals = filtered.slice(0, visibleCount)
+	const hasMore = visibleCount < filtered.length
+
+	function handleSearchChange(e) {
+		setSearch(e.target.value)
+		setVisibleCount(PAGE_SIZE)
+	}
+
+	function handleSortChange(e) {
+		setSortBy(e.target.value)
+		setVisibleCount(PAGE_SIZE)
+	}
+
+	// Load more — just extend the visible slice, no scroll manipulation
+	function handleLoadMore() {
+		setVisibleCount(c => c + PAGE_SIZE)
+	}
+
 	return (
 		<div className={styles.page}>
-			<Hero onScrollToMenu={scrollToMenu} />
+			<Hero />
 
-			<section ref={menuRef} aria-label="Meal menu">
+			<section id="menu" aria-label="Meal menu">
 				<div className="container">
 					<div className={styles.controls}>
 						{/* Top row: title + search */}
@@ -102,14 +119,17 @@ export default function HomePage() {
 									type="search"
 									placeholder="Search dishes…"
 									value={search}
-									onChange={e => setSearch(e.target.value)}
+									onChange={handleSearchChange}
 									className={styles.searchInput}
 									aria-label="Search meals"
 								/>
 								{search && (
 									<button
 										className={styles.clearBtn}
-										onClick={() => setSearch('')}
+										onClick={() => {
+											setSearch('')
+											setVisibleCount(PAGE_SIZE)
+										}}
 										aria-label="Clear search"
 									>
 										<FiX size={15} />
@@ -143,7 +163,7 @@ export default function HomePage() {
 							<select
 								className={styles.sortSelect}
 								value={sortBy}
-								onChange={e => setSortBy(e.target.value)}
+								onChange={handleSortChange}
 								aria-label="Sort meals"
 							>
 								{SORT_OPTIONS.map(opt => (
@@ -178,13 +198,21 @@ export default function HomePage() {
 							}
 						/>
 					) : (
-						<motion.div className={styles.grid} layout>
-							<AnimatePresence mode="popLayout">
-								{filtered.map(meal => (
+						<>
+							<div className={styles.grid}>
+								{visibleMeals.map(meal => (
 									<MealCard key={meal.id} meal={meal} />
 								))}
-							</AnimatePresence>
-						</motion.div>
+							</div>
+
+							{hasMore && (
+								<div className={styles.loadMore}>
+									<button className={styles.loadMoreBtn} onClick={handleLoadMore}>
+										Load more ({filtered.length - visibleCount} remaining)
+									</button>
+								</div>
+							)}
+						</>
 					)}
 				</div>
 			</section>

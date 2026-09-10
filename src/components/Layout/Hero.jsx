@@ -1,12 +1,31 @@
 import { motion } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import toast from 'react-hot-toast'
+import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi'
+import { useCart } from '../../context/CartContext'
+import { MEALS } from '../../data/meals'
 import styles from './Hero.module.css'
 
 const HERO_IMAGE =
 	'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=85&fit=crop'
 
-export default function Hero({ onScrollToMenu }) {
-	const navigate = useNavigate()
+// Pre-filter at module level — never changes
+const TOP_RATED_MEALS = MEALS.filter(m => m.rating >= 4.7)
+
+export default function Hero() {
+	const { addItem } = useCart()
+	const timerRef = useRef(null)
+
+	// Clear any pending timer on unmount
+	useEffect(() => {
+		return () => clearTimeout(timerRef.current)
+	}, [])
+
+	function handleSurpriseMe() {
+		const meal = TOP_RATED_MEALS[Math.floor(Math.random() * TOP_RATED_MEALS.length)]
+		addItem({ ...meal, amount: 1 })
+		toast.success(`Added ${meal.name} to your cart!`)
+	}
 
 	return (
 		<section className={styles.hero} aria-label="Welcome banner">
@@ -41,18 +60,13 @@ export default function Hero({ onScrollToMenu }) {
 					</p>
 
 					<div className={styles.heroActions}>
-						{/* Jumps to the menu filtered to Armenian dishes */}
-						<button className={styles.heroBtn} onClick={() => navigate('/?category=Armenian')}>
-							Order Now
-						</button>
-						{/* Scrolls down to the menu grid */}
-						<button className={`${styles.heroBtn} ${styles.heroBtnGhost}`} onClick={onScrollToMenu}>
-							View Menu
+						<button className={styles.heroBtn} onClick={handleSurpriseMe}>
+							<GiPerspectiveDiceSixFacesRandom size={20} />
+							Surprise Me
 						</button>
 					</div>
 				</motion.div>
 
-				{/* Stats badges — inline below buttons, not overlapping */}
 				<motion.div
 					className={styles.heroBadges}
 					initial={{ opacity: 0, y: 16 }}
