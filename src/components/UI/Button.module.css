@@ -43,7 +43,7 @@
 	border: 1.5px solid var(--color-primary);
 }
 .secondary:hover {
-	background: rgba(232, 82, 26, 0.1);
+	background: var(--color-primary-tint-medium);
 }
 
 .ghost {
