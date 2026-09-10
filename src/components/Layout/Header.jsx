@@ -133,11 +133,12 @@ export default function Header({ onCartOpen }) {
 							</AnimatePresence>
 						</div>
 					) : (
-						<Link to="/login">
-							<button className={styles.userBtn}>
-								<FiUser size={15} />
-								<span>Sign in</span>
-							</button>
+						<Link
+							to="/login"
+							className={styles.userBtn}
+						>
+							<FiUser size={15} />
+							<span>Sign in</span>
 						</Link>
 					)}
 

@@ -9,9 +9,7 @@ export default function Footer() {
 				<div className={styles.inner}>
 					<div className={styles.brand}>
 						<div className={styles.brandLogo}>
-							<MdRestaurantMenu
-								style={{ marginRight: '6px', verticalAlign: 'middle' }}
-							/>
+							<MdRestaurantMenu className={styles.brandIcon} />
 							Avet's <span>Food</span>
 						</div>
 						<p className={styles.brandTagline}>

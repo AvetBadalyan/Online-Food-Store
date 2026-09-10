@@ -12,31 +12,18 @@ export function useMealDetail(id) {
 			setError('No meal ID provided.')
 			return
 		}
-		let cancelled = false
 
 		setLoading(true)
 		setError(null)
 
-		fetchMealById(id)
-			.then(data => {
-				if (cancelled) return
-				if (!data) {
-					setError('Meal not found.')
-				} else {
-					setMeal(data)
-				}
-				setLoading(false)
-			})
-			.catch(err => {
-				if (!cancelled) {
-					setError(err.message ?? 'Something went wrong.')
-					setLoading(false)
-				}
-			})
-
-		return () => {
-			cancelled = true
-		}
+		fetchMealById(id).then(data => {
+			if (data) {
+				setMeal(data)
+			} else {
+				setError('Meal not found.')
+			}
+			setLoading(false)
+		})
 	}, [id])
 
 	return { meal, loading, error }

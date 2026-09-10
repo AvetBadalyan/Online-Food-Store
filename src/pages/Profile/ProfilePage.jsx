@@ -63,9 +63,9 @@ function OrderCard({ order }) {
 
 			<div className={styles.orderCardBody}>
 				<ul className={styles.orderItems}>
-					{items.map((item, i) => (
+					{items.map(item => (
 						<li
-							key={i}
+							key={item.id ?? item.name}
 							className={styles.orderItem}
 						>
 							<span className={styles.orderItemName}>
@@ -228,11 +228,7 @@ export default function ProfilePage() {
 								action={
 									<Link
 										to="/"
-										style={{
-											color: 'var(--color-primary)',
-											fontSize: 'var(--text-sm)',
-											fontWeight: 'var(--font-semi)'
-										}}
+										className={styles.emptyOrdersLink}
 									>
 										Browse the menu →
 									</Link>
