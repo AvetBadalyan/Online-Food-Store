@@ -135,7 +135,7 @@
 }
 
 .heroBadge {
-	background: rgba(26, 23, 19, 0.75);
+	background: var(--color-bg-card);
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-lg);
 	padding: var(--space-3) var(--space-5);

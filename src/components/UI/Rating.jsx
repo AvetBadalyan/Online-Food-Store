@@ -3,16 +3,10 @@ import styles from './Rating.module.css'
 
 const STAR_COUNT = 5
 
-const STAR_ICONS = {
-	full: FaStar,
-	half: FaStarHalfAlt,
-	empty: FaRegStar
-}
-
-const STAR_CLASS = {
-	full: styles.starFull,
-	half: styles.starHalf,
-	empty: ''
+const STAR_CONFIG = {
+	full: { icon: FaStar, class: styles.starFull },
+	half: { icon: FaStarHalfAlt, class: styles.starHalf },
+	empty: { icon: FaRegStar, class: '' }
 }
 
 function getStarType(position, value) {
@@ -28,9 +22,9 @@ export default function Rating({ value = 0, numReviews, size = 14 }) {
 				{Array.from({ length: STAR_COUNT }, (_, i) => {
 					const position = i + 1
 					const type = getStarType(position, value)
-					const Icon = STAR_ICONS[type]
+					const { icon: Icon, class: starClass } = STAR_CONFIG[type]
 					return (
-						<span key={position} className={`${styles.star} ${STAR_CLASS[type]}`}>
+						<span key={position} className={`${styles.star} ${starClass}`}>
 							<Icon size={size} />
 						</span>
 					)

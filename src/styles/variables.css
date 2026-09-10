@@ -129,4 +129,12 @@
 	--z-drawer: 300;
 	--z-modal: 400;
 	--z-toast: 500;
+
+	/* Breakpoints (for reference — use in @media queries)
+	   --bp-sm: 480px   — small mobile
+	   --bp-md: 640px   — large mobile / small tablet
+	   --bp-lg: 768px   — tablet
+	   --bp-xl: 900px   — small desktop
+	   --bp-2xl: 1024px — desktop
+	*/
 }
